@@ -1,4 +1,4 @@
-import type { PackLayoutOptions } from '@niche-works/css-layouts/pack';
+import type { PackLayoutOptions } from '@niche-works/style-layouts/pack';
 import type { WithLayoutBaseOptions } from '../_internal/withLayoutBase';
 
 export type WithPackLayoutProps = PackLayoutOptions;

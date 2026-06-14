@@ -3,7 +3,7 @@ import type {
   AlignX,
   AlignY,
   Direction,
-} from '@niche-works/css-layouts/constants';
+} from '@niche-works/style-layouts/constants';
 
 /**
  * 子要素を並べる方向

@@ -1,6 +1,6 @@
 {
   "name": "@niche-works/react-layout",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "private": true,
   "keywords": [
     "react",
@@ -37,11 +37,11 @@
     "tidy": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json}\" --config ./prettier.tidy.config.ts"
   },
   "dependencies": {
-    "@niche-works/css-layouts": "^0.2.0",
-    "@niche-works/react": "^0.1.0",
-    "@niche-works/react-style-proxy": "^0.2.0",
-    "@niche-works/types": "^0.3.0",
-    "@niche-works/utils": "^0.4.0",
+    "@niche-works/react-style-proxy": "^0.2.1",
+    "@niche-works/react-utils": "^0.1.0",
+    "@niche-works/style-layouts": "^0.4.2",
+    "@niche-works/types": "^0.3.2",
+    "@niche-works/utils": "^0.4.2",
     "clsx": "^2.1.1",
     "tslib": "^2.8.1"
   },
@@ -53,10 +53,10 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@eslint/js": "^10.0.1",
-    "@niche-works/dev": "^0.5.1",
-    "@niche-works/react-parts-props": "^0.1.0",
-    "@niche-works/react-style-props": "^0.1.2",
-    "@niche-works/rollup-plugin-dist-package": "^0.1.0",
+    "@niche-works/dev": "^0.5.4",
+    "@niche-works/react-parts-props": "^0.1.2",
+    "@niche-works/react-style-props": "^0.2.4",
+    "@niche-works/rollup-plugin-dist-package": "^0.2.2",
     "@rolldown/plugin-babel": "^0.2.3",
     "@storybook/addon-a11y": "^10.3.5",
     "@storybook/addon-docs": "^10.3.5",
@@ -72,7 +72,7 @@
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^6.0.1",
     "@vitest/browser-playwright": "^4.1.5",
-    "@vitest/coverage-v8": "^4.1.5",
+    "@vitest/coverage-v8": "^4.1.8",
     "babel-plugin-react-compiler": "^1.0.0",
     "chroma-js": "^3.2.0",
     "eslint": "^10.2.1",
@@ -98,7 +98,7 @@
     "typescript": "^6.0.2",
     "typescript-eslint": "^8.58.2",
     "vite": "^8.0.10",
-    "vitest": "^4.1.5"
+    "vitest": "^4.1.8"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",

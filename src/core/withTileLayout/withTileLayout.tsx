@@ -1,4 +1,4 @@
-import tile from '@niche-works/css-layouts/tile';
+import tile from '@niche-works/style-layouts/tile';
 import type { LooseDictionary } from '@niche-works/types';
 import type {
   ElementType,

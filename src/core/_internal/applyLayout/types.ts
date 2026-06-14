@@ -1,4 +1,4 @@
-import type { LayoutResult } from '@niche-works/css-layouts';
+import type { LayoutResult } from '@niche-works/style-layouts';
 import type { LooseDictionary } from '@niche-works/types';
 import type { CSSProperties } from 'react';
 

@@ -1,13 +1,13 @@
 import type {
   BalanceLayoutOptions,
-  CreateLayout,
   FlowLayoutOptions,
   MatrixLayoutOptions,
   PackLayoutOptions,
   PinLayoutOptions,
   StackLayoutOptions,
+  StyleLayout,
   TileLayoutOptions,
-} from '@niche-works/css-layouts';
+} from '@niche-works/style-layouts';
 import {
   balance,
   flow,
@@ -16,10 +16,10 @@ import {
   pin,
   stack,
   tile,
-} from '@niche-works/css-layouts';
+} from '@niche-works/style-layouts';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const LAYOUTS: Record<string, CreateLayout<any>> = {
+export const LAYOUTS: Record<string, StyleLayout<any>> = {
   balance,
   flow,
   matrix,
@@ -40,17 +40,20 @@ export const LAYOUT_PROPS_KEYS: {
       TileLayoutOptions
   >]: 1;
 } = {
-  adjustX: 1,
-  adjustY: 1,
+  direction: 1,
   alignX: 1,
   alignY: 1,
+  adjustX: 1,
+  adjustY: 1,
+  gap: 1,
+  gapX: 1,
+  gapY: 1,
   childSizeX: 1,
   childSizeY: 1,
-  direction: 1,
-  spacing: 1,
-  spacingX: 1,
-  spacingY: 1,
+  childRatioX: 1,
+  childRatioY: 1,
   childCountX: 1,
   childCountY: 1,
-  childY: 1,
+  tracksX: 1,
+  tracksY: 1,
 };

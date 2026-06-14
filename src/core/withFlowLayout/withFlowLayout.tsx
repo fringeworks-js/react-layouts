@@ -1,4 +1,4 @@
-import flow from '@niche-works/css-layouts/flow';
+import flow from '@niche-works/style-layouts/flow';
 import type { LooseDictionary } from '@niche-works/types';
 import type {
   ElementType,

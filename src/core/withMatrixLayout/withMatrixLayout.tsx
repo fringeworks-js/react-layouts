@@ -1,5 +1,5 @@
-import type { CreateLayout } from '@niche-works/css-layouts';
-import matrix from '@niche-works/css-layouts/matrix';
+import type { StyleLayout } from '@niche-works/style-layouts';
+import matrix from '@niche-works/style-layouts/matrix';
 import type { LooseDictionary } from '@niche-works/types';
 import type {
   ElementType,
@@ -23,5 +23,5 @@ export default function withMatrixLayout<P = LooseDictionary, T = unknown>(
   PropsWithoutRef<P & WithMatrixLayoutProps> & RefAttributes<T>
 > {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return withLayoutBase(Component, matrix as CreateLayout<any>, options) as any;
+  return withLayoutBase(Component, matrix as StyleLayout<any>, options) as any;
 }

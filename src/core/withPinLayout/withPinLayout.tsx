@@ -1,4 +1,4 @@
-import pin from '@niche-works/css-layouts/pin';
+import pin from '@niche-works/style-layouts/pin';
 import type { LooseDictionary } from '@niche-works/types';
 import type {
   ElementType,

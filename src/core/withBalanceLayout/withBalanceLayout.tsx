@@ -1,4 +1,4 @@
-import balance from '@niche-works/css-layouts/balance';
+import balance from '@niche-works/style-layouts/balance';
 import type { LooseDictionary } from '@niche-works/types';
 import type {
   ElementType,

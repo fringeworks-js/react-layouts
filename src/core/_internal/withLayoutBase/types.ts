@@ -1,4 +1,4 @@
-import type { CreateLayout } from '@niche-works/css-layouts';
+import type { CreateLayout } from '@niche-works/style-layouts';
 import type { ReactNode } from 'react';
 import type { ApplyLayoutOptions } from '../applyLayout';
 

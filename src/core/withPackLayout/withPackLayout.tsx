@@ -1,4 +1,4 @@
-import pack from '@niche-works/css-layouts/pack';
+import pack from '@niche-works/style-layouts/pack';
 import type { LooseDictionary } from '@niche-works/types';
 import type {
   ElementType,

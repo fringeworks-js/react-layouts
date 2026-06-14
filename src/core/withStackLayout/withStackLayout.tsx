@@ -1,4 +1,4 @@
-import stack from '@niche-works/css-layouts/stack';
+import stack from '@niche-works/style-layouts/stack';
 import type { LooseDictionary } from '@niche-works/types';
 import type {
   ElementType,

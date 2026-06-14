@@ -7,7 +7,7 @@ import type {
   PinLayoutOptions,
   StackLayoutOptions,
   TileLayoutOptions,
-} from '@niche-works/css-layouts';
+} from '@niche-works/style-layouts';
 import type { ArgTypes } from '@storybook/react-vite';
 import { Adjust, AlignX, AlignY, Direction } from '../../src/constants';
 import type { DebugOptions } from './types';

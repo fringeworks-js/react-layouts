@@ -1,4 +1,4 @@
-import type { CreateLayout } from '@niche-works/css-layouts';
+import type { CreateLayout } from '@niche-works/style-layouts';
 import type { LooseDictionary } from '@niche-works/types';
 import type { ApplyLayoutOptions, ApplyLayoutResult } from './types';
 

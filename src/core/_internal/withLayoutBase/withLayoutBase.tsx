@@ -1,6 +1,6 @@
-import type { CreateLayout } from '@niche-works/css-layouts';
 import { styleProxy } from '@niche-works/react-style-proxy';
 import ensureComponent from '@niche-works/react/utils/ensureComponent';
+import type { CreateLayout } from '@niche-works/style-layouts';
 import clsx from 'clsx';
 import type { ElementType } from 'react';
 import { createElement, forwardRef } from 'react';
