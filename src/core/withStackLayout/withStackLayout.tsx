@@ -1,8 +1,7 @@
 import stack from '@niche-works/style-layouts/stack';
-import type { LooseDictionary } from '@niche-works/types';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
-import type { WithStackLayoutOptions, WithStackLayoutProps } from './types';
+import type { WithStackLayoutOptions } from './types';
 
 /**
  * コンテナーのレイアウト機能を追加するHOC
@@ -10,9 +9,9 @@ import type { WithStackLayoutOptions, WithStackLayoutProps } from './types';
  * @param options オプション
  * @returns
  */
-export default function withStackLayout<P = LooseDictionary, T = unknown>(
-  Component: ElementType<P>,
+export default function withStackLayout<C extends ElementType>(
+  Component: C,
   options: WithStackLayoutOptions = {},
 ) {
-  return withLayoutBase<WithStackLayoutProps, P, T>(Component, stack, options);
+  return withLayoutBase(Component, stack, options);
 }

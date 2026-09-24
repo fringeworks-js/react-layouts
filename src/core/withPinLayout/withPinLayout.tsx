@@ -1,8 +1,7 @@
 import pin from '@niche-works/style-layouts/pin';
-import type { LooseDictionary } from '@niche-works/types';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
-import type { WithPinLayoutOptions, WithPinLayoutProps } from './types';
+import type { WithPinLayoutOptions } from './types';
 
 /**
  * コンテナーのレイアウト機能を追加するHOC
@@ -10,9 +9,9 @@ import type { WithPinLayoutOptions, WithPinLayoutProps } from './types';
  * @param options オプション
  * @returns
  */
-export default function withPinLayout<P = LooseDictionary, T = unknown>(
-  Component: ElementType<P>,
+export default function withPinLayout<C extends ElementType>(
+  Component: C,
   options: WithPinLayoutOptions = {},
 ) {
-  return withLayoutBase<WithPinLayoutProps, P, T>(Component, pin, options);
+  return withLayoutBase(Component, pin, options);
 }

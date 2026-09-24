@@ -1,8 +1,7 @@
 import pack from '@niche-works/style-layouts/pack';
-import type { LooseDictionary } from '@niche-works/types';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
-import type { WithPackLayoutOptions, WithPackLayoutProps } from './types';
+import type { WithPackLayoutOptions } from './types';
 
 /**
  * コンテナーのレイアウト機能を追加するHOC
@@ -10,9 +9,9 @@ import type { WithPackLayoutOptions, WithPackLayoutProps } from './types';
  * @param options オプション
  * @returns
  */
-export default function withPackLayout<P = LooseDictionary, T = unknown>(
-  Component: ElementType<P>,
+export default function withPackLayout<C extends ElementType>(
+  Component: C,
   options: WithPackLayoutOptions = {},
 ) {
-  return withLayoutBase<WithPackLayoutProps, P, T>(Component, pack, options);
+  return withLayoutBase(Component, pack, options);
 }

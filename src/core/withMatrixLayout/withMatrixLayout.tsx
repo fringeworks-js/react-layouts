@@ -1,8 +1,7 @@
 import matrix from '@niche-works/style-layouts/matrix';
-import type { LooseDictionary } from '@niche-works/types';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
-import type { WithMatrixLayoutOptions, WithMatrixLayoutProps } from './types';
+import type { WithMatrixLayoutOptions } from './types';
 
 /**
  * コンテナーのレイアウト機能を追加するHOC
@@ -10,13 +9,9 @@ import type { WithMatrixLayoutOptions, WithMatrixLayoutProps } from './types';
  * @param options オプション
  * @returns
  */
-export default function withMatrixLayout<P = LooseDictionary, T = unknown>(
-  Component: ElementType<P>,
+export default function withMatrixLayout<C extends ElementType>(
+  Component: C,
   options: WithMatrixLayoutOptions = {},
 ) {
-  return withLayoutBase<WithMatrixLayoutProps, P, T>(
-    Component,
-    matrix,
-    options,
-  );
+  return withLayoutBase(Component, matrix, options);
 }

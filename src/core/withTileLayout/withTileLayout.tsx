@@ -1,8 +1,7 @@
 import tile from '@niche-works/style-layouts/tile';
-import type { LooseDictionary } from '@niche-works/types';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
-import type { WithTileLayoutOptions, WithTileLayoutProps } from './types';
+import type { WithTileLayoutOptions } from './types';
 
 /**
  * コンテナーのレイアウト機能を追加するHOC
@@ -10,9 +9,9 @@ import type { WithTileLayoutOptions, WithTileLayoutProps } from './types';
  * @param options オプション
  * @returns
  */
-export default function withTileLayout<P = LooseDictionary, T = unknown>(
-  Component: ElementType<P>,
+export default function withTileLayout<C extends ElementType>(
+  Component: C,
   options: WithTileLayoutOptions = {},
 ) {
-  return withLayoutBase<WithTileLayoutProps, P, T>(Component, tile, options);
+  return withLayoutBase(Component, tile, options);
 }
