@@ -1,23 +1,26 @@
 import type { StyleLayout } from '@niche-works/style-layouts';
 import type { LooseDictionary } from '@niche-works/types';
+import { unsafeCast } from '@niche-works/utils';
 import clsx from 'clsx';
 import type { CSSProperties } from 'react';
 import type { ApplyLayoutOptions, ApplyLayoutResult } from './types';
 
 /**
  * レイアウト用のスタイルを適用する
+ * @param layout レイアウトを作る関数
+ * @param options レイアウトのオプション
  * @returns
  */
-export default function applyLayout<
-  P extends LooseDictionary = LooseDictionary,
->(
-  layout: StyleLayout,
-  options: ApplyLayoutOptions<P> = {} as P,
+export default function applyLayout<O extends object = LooseDictionary>(
+  layout: StyleLayout<O>,
+  options: ApplyLayoutOptions<O> = unsafeCast<ApplyLayoutOptions<O>>({}),
 ): ApplyLayoutResult {
   const { className, scroll, style: optionStyle, ...rest } = options;
   const style: CSSProperties = { ...optionStyle };
   // コンテナーのスタイル
-  const { className: layoutedClassName, style: layoutedStyle } = layout(rest);
+  const { className: layoutedClassName, style: layoutedStyle } = layout(
+    unsafeCast<O>(rest),
+  );
   if (scroll) {
     style.overflow = 'auto';
   }

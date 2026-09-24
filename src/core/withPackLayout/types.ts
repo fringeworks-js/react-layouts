@@ -1,6 +1,15 @@
 import type { PackLayoutOptions } from '@niche-works/style-layouts/pack';
-import type { WithLayoutBaseOptions } from '../_internal/withLayoutBase';
+import type { ElementType } from 'react';
+import type {
+  LayoutComponent,
+  WithLayoutBaseOptions,
+} from '../_internal/withLayoutBase';
 
 export type WithPackLayoutProps = PackLayoutOptions;
 
 export type WithPackLayoutOptions = WithLayoutBaseOptions;
+
+export type PackLayoutComponent<C extends ElementType> = LayoutComponent<
+  C,
+  PackLayoutOptions
+>;

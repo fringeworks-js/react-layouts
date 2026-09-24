@@ -6,6 +6,7 @@ import { unsafeCast } from '@niche-works/utils';
 import clsx from 'clsx';
 import type { ComponentRef, ElementType } from 'react';
 import { createElement, forwardRef } from 'react';
+import type { ApplyLayoutOptions } from '../applyLayout';
 import applyLayout from '../applyLayout';
 import { LAYOUT_PROPS_KEYS } from './_constants';
 import type {
@@ -40,7 +41,11 @@ export default function withLayoutBase<C extends ElementType, O extends object>(
   } = options;
 
   const LayoutComponent = forwardRef<ComponentRef<C>, Props>((props, ref) => {
-    const layoutProps = applyLayout(layout, props);
+    // propsは`O`を含むが、未解決の型引数`O`そのものとは同一視できないためキャストする
+    const layoutProps = applyLayout(
+      layout,
+      unsafeCast<ApplyLayoutOptions<O>>(props),
+    );
     // レイアウト用のプロパティを削除
     const containerProps: LooseDictionary = { ...props };
     for (const key in LAYOUT_PROPS_KEYS) {

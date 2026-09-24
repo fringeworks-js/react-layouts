@@ -1,23 +1,31 @@
 import type { LooseDictionary } from '@niche-works/types';
 import type { CSSProperties } from 'react';
 
-export type ApplyLayoutOptions<P extends LooseDictionary = LooseDictionary> =
-  P & {
-    /**
-     * クラス
-     */
-    className?: string;
+/**
+ * レイアウト機能が消費する共通のプロパティ
+ */
+export type LayoutBaseProps = {
+  /**
+   * クラス
+   */
+  className?: string;
 
-    /**
-     * スクロールの有無
-     */
-    scroll?: boolean;
+  /**
+   * スクロールの有無
+   */
+  scroll?: boolean;
 
-    /**
-     * スタイル
-     */
-    style?: CSSProperties;
-  };
+  /**
+   * スタイル
+   */
+  style?: CSSProperties;
+};
+
+/**
+ * レイアウト用のスタイルを適用する際のオプション
+ */
+export type ApplyLayoutOptions<O extends object = LooseDictionary> = O &
+  LayoutBaseProps;
 
 export type ApplyLayoutResult = {
   /**

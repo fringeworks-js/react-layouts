@@ -19,4 +19,10 @@ export default defineConfig([globalIgnores(['dist']), {
   languageOptions: {
     globals: globals.browser,
   },
+}, {
+  // 型テストは型の検証のみを行うファイルでHMRの対象外
+  files: ['**/*.test-d.{ts,tsx}'],
+  rules: {
+    'react-refresh/only-export-components': 'off',
+  },
 }, ...storybook.configs["flat/recommended"]])

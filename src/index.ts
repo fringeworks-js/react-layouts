@@ -2,6 +2,8 @@ export * from './constants';
 export * as styles from './styles';
 export type * from './withBalanceLayout';
 export { default as withBalanceLayout } from './withBalanceLayout';
+export type * from './withFlowLayout';
+export { default as withFlowLayout } from './withFlowLayout';
 export type * from './withMatrixLayout';
 export { default as withMatrixLayout } from './withMatrixLayout';
 export type * from './withPackLayout';

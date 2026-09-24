@@ -1,7 +1,7 @@
 import balance from '@niche-works/style-layouts/balance';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
-import type { WithBalanceLayoutOptions } from './types';
+import type { BalanceLayoutComponent, WithBalanceLayoutOptions } from './types';
 
 /**
  * コンテナーのレイアウト機能を追加するHOC
@@ -12,6 +12,6 @@ import type { WithBalanceLayoutOptions } from './types';
 export default function withBalanceLayout<C extends ElementType>(
   Component: C,
   options: WithBalanceLayoutOptions = {},
-) {
+): BalanceLayoutComponent<C> {
   return withLayoutBase(Component, balance, options);
 }

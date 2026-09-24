@@ -2,29 +2,20 @@ import type { StyleProxyOptions } from '@niche-works/react-style-proxy/styleProx
 import type {
   ComponentPropsWithoutRef,
   ComponentRef,
-  CSSProperties,
   ElementType,
   ForwardRefExoticComponent,
   PropsWithoutRef,
   RefAttributes,
 } from 'react';
+import type { LayoutBaseProps } from '../applyLayout';
 
 /**
  * ユニオン型を分配して全てのキーを取り出す
+ *
+ * `keyof`をユニオン型へそのまま適用すると共通のキーしか得られないため、
+ * 分配してから取り出す
  */
-type AllKeys<T> = T extends unknown ? keyof T : never;
-
-/**
- * レイアウト機能が消費する共通のプロパティ
- */
-export type LayoutBaseProps = {
-  /** クラス名 */
-  className?: string;
-  /** スタイル */
-  style?: CSSProperties;
-  /** スクロールの有無 */
-  scroll?: boolean;
-};
+export type AllKeys<T> = T extends unknown ? keyof T : never;
 
 /**
  * HOCのオプション
