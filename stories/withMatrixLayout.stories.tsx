@@ -25,6 +25,6 @@ export const Default: Story = {
   argTypes: ARG_TYPES.matrix,
   args: {
     ...ARGS.matrix,
-    childCount: 12,
+    itemCount: 12,
   },
 };

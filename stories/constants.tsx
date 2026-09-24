@@ -97,10 +97,10 @@ export const ADJUST_DIRECTION_Y_ARG_TYPES: ArgTypes<AdjustOptions> = {
 };
 
 export const CHILD_SIZE_ARG_TYPES: ArgTypes<ChildSizeOptions> = {
-  childSizeX: {
+  itemSizeX: {
     control: 'text',
   },
-  childSizeY: {
+  itemSizeY: {
     control: 'text',
   },
 };
@@ -118,10 +118,10 @@ export const SPACING_ARG_TYPES: ArgTypes<SpacingOptions> = {
 };
 
 export const CHILD_COUNT_ARG_TYPES: ArgTypes<ChildCountOptions> = {
-  childCountX: {
+  itemCountX: {
     control: 'text',
   },
-  childCountY: {
+  itemCountY: {
     control: 'text',
   },
 };
@@ -142,7 +142,7 @@ export const DEBUG_ARG_TYPES: ArgTypes<DebugOptions> = {
   containerHeight: {
     control: 'text',
   },
-  childCount: {
+  itemCount: {
     type: 'number',
   },
   sizeType: {
@@ -251,14 +251,14 @@ export const CHILD_OPTIONS: ChildOptions = {
   childY: undefined,
 };
 
-export const CHILD_COUNT_OPTIONS: ChildCountOptions = {
-  childCountX: '4' as any,
-  childCountY: '3' as any,
+export const ITEM_COUNT_OPTIONS: ChildCountOptions = {
+  itemCountX: '4' as any,
+  itemCountY: '3' as any,
 };
 
-export const CHILD_SIZE_OPTIONS: ChildSizeOptions = {
-  childSizeX: '60',
-  childSizeY: '120',
+export const ITEM_SIZE_OPTIONS: ChildSizeOptions = {
+  itemSizeX: '60',
+  itemSizeY: '120',
 };
 
 export const SPACING_OPTIONS: SpacingOptions = {
@@ -270,7 +270,7 @@ export const SPACING_OPTIONS: SpacingOptions = {
 export const DEBUG_PARAMS: DebugOptions = {
   containerWidth: '600',
   containerHeight: '450',
-  childCount: 12,
+  itemCount: 12,
   sizeType: 'none',
   posType: 'none',
 };
@@ -300,7 +300,7 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...DIRECTION_OPTIONS,
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
-    ...CHILD_SIZE_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
     ...SPACING_OPTIONS,
     ...DEBUG_PARAMS,
   },
@@ -309,7 +309,7 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
     ...SPACING_OPTIONS,
-    ...CHILD_SIZE_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
     ...DEBUG_PARAMS,
   },
   matrix: {
@@ -317,13 +317,13 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
     ...CHILD_OPTIONS,
-    ...CHILD_SIZE_OPTIONS,
-    ...CHILD_COUNT_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
+    ...ITEM_COUNT_OPTIONS,
     ...SPACING_OPTIONS,
     ...DEBUG_PARAMS,
   },
   pin: {
-    ...CHILD_SIZE_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
     ...DEBUG_PARAMS,
     posType: 'static',
   },
@@ -337,14 +337,14 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
     ...SPACING_OPTIONS,
-    ...CHILD_SIZE_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
     ...DEBUG_PARAMS,
   },
   tile: {
     ...DIRECTION_OPTIONS,
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
-    ...CHILD_SIZE_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
     ...SPACING_OPTIONS,
     ...DEBUG_PARAMS,
   },

@@ -15,8 +15,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@niche-works/style-layouts':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.5.0
+        version: 0.5.0
       '@niche-works/types':
         specifier: ^0.3.2
         version: 0.3.2
@@ -833,11 +833,11 @@ packages:
     peerDependencies:
       rollup: ^4.0.0
 
-  '@niche-works/style-layouts@0.4.2':
-    resolution: {integrity: sha512-MbAxLHbt28FSVidV5IW3ViWNHPsYkhoSJQaM+u41bCzNEApZIb4+VWDeQjfj2k3CrldQkrGFWyr/adoXxG79wA==}
+  '@niche-works/style-layouts@0.5.0':
+    resolution: {integrity: sha512-TuStGO4xFepFcWQBXnHag7V0A7aSNWRAkcuOFN6FtQCO6KM9i3MrvkcUNtrQHzHSaLmdOLnDe5ypoKnCNyTgmQ==}
 
-  '@niche-works/style-utils@0.1.1':
-    resolution: {integrity: sha512-a4sIlY2UiCEDT2y1Ig7VyzpcaLeV4TtmQY0C2moCNn2pFJyYYOcb1JADK1A+yRWywnO/d9Vm79zBToDroLcSgg==}
+  '@niche-works/style-utils@0.2.0':
+    resolution: {integrity: sha512-XLV6IWYRwuys16rBejZHqhLKJiMQ2WRWnIxHvaTHLwijs5qss19ffZfEJ+ssru1Ejvhg6j8XG0bxDUDjs+nZaA==}
 
   '@niche-works/types@0.3.2':
     resolution: {integrity: sha512-+RQSEWHCnIPEIsqBAk5TzUobSAHI4Fr9f7euKJKED6fJRb3eKUjiAAAIJhcKu+nuOjm7aX5DPKTMeMByCnpwjg==}
@@ -4099,13 +4099,13 @@ snapshots:
       tslib: 2.8.1
       type-fest: 5.7.0
 
-  '@niche-works/style-layouts@0.4.2':
+  '@niche-works/style-layouts@0.5.0':
     dependencies:
-      '@niche-works/style-utils': 0.1.1
+      '@niche-works/style-utils': 0.2.0
       '@niche-works/types': 0.3.2
       '@niche-works/utils': 0.4.2
 
-  '@niche-works/style-utils@0.1.1':
+  '@niche-works/style-utils@0.2.0':
     dependencies:
       '@niche-works/web-utils': 0.1.1
 

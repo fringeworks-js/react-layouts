@@ -26,7 +26,7 @@ export const Balance: Story = {
   args: {
     ...ARGS.balance,
     layout: 'balance',
-    childCount: 12,
+    itemCount: 12,
   },
 };
 
@@ -35,7 +35,7 @@ export const Flow: Story = {
   args: {
     ...ARGS.flow,
     layout: 'flow',
-    childCount: 12,
+    itemCount: 12,
   },
 };
 
@@ -45,7 +45,7 @@ export const Pack: Story = {
     ...ARGS.pack,
     layout: 'pack',
     sizeType: 'none',
-    childCount: 12,
+    itemCount: 12,
   },
 };
 
@@ -54,7 +54,7 @@ export const Matrix: Story = {
   args: {
     ...ARGS.matrix,
     layout: 'matrix',
-    childCount: 12,
+    itemCount: 12,
   },
 };
 
@@ -63,7 +63,7 @@ export const Pin: Story = {
   args: {
     ...ARGS.pin,
     layout: 'pin',
-    childCount: 12,
+    itemCount: 12,
   },
 };
 
@@ -72,7 +72,7 @@ export const Stack: Story = {
   args: {
     ...ARGS.stack,
     layout: 'stack',
-    childCount: 12,
+    itemCount: 12,
   },
 };
 
@@ -81,6 +81,6 @@ export const Tile: Story = {
   args: {
     ...ARGS.tile,
     layout: 'tile',
-    childCount: 12,
+    itemCount: 12,
   },
 };

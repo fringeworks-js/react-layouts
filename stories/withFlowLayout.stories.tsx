@@ -25,6 +25,6 @@ export const Default: Story = {
   argTypes: ARG_TYPES.flow,
   args: {
     ...ARGS.flow,
-    childCount: 12,
+    itemCount: 12,
   },
 };

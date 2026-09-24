@@ -25,6 +25,6 @@ export const Default: Story = {
   argTypes: ARG_TYPES.balance,
   args: {
     ...ARGS.balance,
-    childCount: 12,
+    itemCount: 12,
   },
 };

@@ -1,11 +1,6 @@
 import pin from '@niche-works/style-layouts/pin';
 import type { LooseDictionary } from '@niche-works/types';
-import type {
-  ElementType,
-  ForwardRefExoticComponent,
-  PropsWithoutRef,
-  RefAttributes,
-} from 'react';
+import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
 import type { WithPinLayoutOptions, WithPinLayoutProps } from './types';
 
@@ -18,8 +13,6 @@ import type { WithPinLayoutOptions, WithPinLayoutProps } from './types';
 export default function withPinLayout<P = LooseDictionary, T = unknown>(
   Component: ElementType<P>,
   options: WithPinLayoutOptions = {},
-): ForwardRefExoticComponent<
-  PropsWithoutRef<P & WithPinLayoutProps> & RefAttributes<T>
-> {
-  return withLayoutBase(Component, pin, options);
+) {
+  return withLayoutBase<WithPinLayoutProps, P, T>(Component, pin, options);
 }

@@ -51,7 +51,7 @@ const StackContainer = withStackLayout(Container);
   alignX="left"
   alignY="top"
   adjustX="grow"
-  childSizeX="200px"
+  itemSizeX="200px"
   spacing="8px"
 />;
 ```
@@ -72,7 +72,7 @@ const FlowContainer = withFlowLayout(Container);
   alignX="left"
   alignY="top"
   adjustX="grow"
-  childSizeX="200px"
+  itemSizeX="200px"
   spacing="8px"
 />;
 ```
@@ -92,15 +92,15 @@ const MatrixContainer = withMatrixLayout(Container);
 
 <MatrixContainer
   direction="x"
-  childCountX={3}
+  itemCountX={3}
   childY={[200, 100, '1fr']}
-  childSizeX="200px"
+  itemSizeX="200px"
   adjustX="fit"
   spacing="8px"
 />;
 ```
 
-各軸で `childCount` または `child` のどちらか一方が必須です（両方は指定不可）。
+各軸で `itemCount` または `child` のどちらか一方が必須です（両方は指定不可）。
 
 > **注意:** このレイアウトはコンテナのサイズが外部から確定していることを前提としています。`width: max-content` など、子要素によってサイズが決まる親要素では、パーセンテージ値が意図通りに動作しない場合があります。
 
@@ -115,7 +115,7 @@ const TileContainer = withTileLayout(Container);
 
 // ----------------------
 
-<TileContainer direction="x" childSizeX="200px" adjustX="fit" spacing="8px" />;
+<TileContainer direction="x" itemSizeX="200px" adjustX="fit" spacing="8px" />;
 ```
 
 > **注意:** `matrix` と同様に、コンテナのサイズが外部から確定していることを前提としています。
@@ -137,7 +137,7 @@ const BalanceContainer = withBalanceLayout(Container);
 <BalanceContainer
   direction="x"
   adjustX="grow"
-  childSizeX="200px"
+  itemSizeX="200px"
   spacing="8px"
 />;
 ```
@@ -167,29 +167,29 @@ const PinContainer = withPinLayout(Container);
 
 // ----------------------
 
-<PinContainer childSizeX="100px" childSizeY="80px" />;
+<PinContainer itemSizeX="100px" itemSizeY="80px" />;
 ```
 
 ## オプション
 
 ### オプション一覧
 
-| オプション     | 型                       | 説明                         |
-| -------------- | ------------------------ | ---------------------------- |
-| `direction?`   | `'x' \| 'y'`             | 主軸の方向                   |
-| `alignX?`      | [`AlignX`](#alignx-の値) | 子要素の横位置               |
-| `alignY?`      | [`AlignY`](#aligny-の値) | 子要素の縦位置               |
-| `adjustX?`     | [`Adjust`](#adjust-の値) | 子要素の横方向のサイズ調整   |
-| `adjustY?`     | [`Adjust`](#adjust-の値) | 子要素の縦方向のサイズ調整   |
-| `spacing?`     | `string \| number`       | 子要素間の余白（横縦共通）   |
-| `spacingX?`    | `string \| number`       | 子要素間の余白（横方向）     |
-| `spacingY?`    | `string \| number`       | 子要素間の余白（縦方向）     |
-| `childSizeX?`  | `string \| number`       | 子要素の幅                   |
-| `childSizeY?`  | `string \| number`       | 子要素の高さ                 |
-| `childCountX?` | `number`                 | 子要素の横方向の数           |
-| `childCountY?` | `number`                 | 子要素の縦方向の数           |
-| `childX?`      | `(string \| number)[]`   | 子要素の横方向の個々のサイズ |
-| `childY?`      | `(string \| number)[]`   | 子要素の縦方向の個々のサイズ |
+| オプション    | 型                       | 説明                         |
+| ------------- | ------------------------ | ---------------------------- |
+| `direction?`  | `'x' \| 'y'`             | 主軸の方向                   |
+| `alignX?`     | [`AlignX`](#alignx-の値) | 子要素の横位置               |
+| `alignY?`     | [`AlignY`](#aligny-の値) | 子要素の縦位置               |
+| `adjustX?`    | [`Adjust`](#adjust-の値) | 子要素の横方向のサイズ調整   |
+| `adjustY?`    | [`Adjust`](#adjust-の値) | 子要素の縦方向のサイズ調整   |
+| `spacing?`    | `string \| number`       | 子要素間の余白（横縦共通）   |
+| `spacingX?`   | `string \| number`       | 子要素間の余白（横方向）     |
+| `spacingY?`   | `string \| number`       | 子要素間の余白（縦方向）     |
+| `itemSizeX?`  | `string \| number`       | 子要素の幅                   |
+| `itemSizeY?`  | `string \| number`       | 子要素の高さ                 |
+| `itemCountX?` | `number`                 | 子要素の横方向の数           |
+| `itemCountY?` | `number`                 | 子要素の縦方向の数           |
+| `childX?`     | `(string \| number)[]`   | 子要素の横方向の個々のサイズ |
+| `childY?`     | `(string \| number)[]`   | 子要素の縦方向の個々のサイズ |
 
 ### `Adjust` の値
 

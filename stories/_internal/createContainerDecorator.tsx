@@ -20,14 +20,14 @@ export default function createContainerDecorator<
     const {
       containerWidth = 800,
       containerHeight = 600,
-      childCount = 12,
+      itemCount = 12,
       sizeType = 'none',
       posType = 'none',
       ...rest
     } = toAttributesObj(args);
-    const colors = chroma.scale(['d9ed92', '184e77']).colors(childCount);
+    const colors = chroma.scale(['d9ed92', '184e77']).colors(itemCount);
     const sizeStyles = useMemo(() => {
-      const list = Array.from({ length: childCount });
+      const list = Array.from({ length: itemCount });
       if (sizeType === 'rand') {
         return list.map(() => ({
           height: _random(100),
@@ -41,9 +41,9 @@ export default function createContainerDecorator<
           width: 80,
         }));
       }
-    }, [childCount, sizeType]);
+    }, [itemCount, sizeType]);
     const positionStyles = useMemo(() => {
-      const list = Array.from({ length: childCount });
+      const list = Array.from({ length: itemCount });
       if (posType === 'rand') {
         return list.map(() => ({
           top: _random(600),
@@ -57,7 +57,7 @@ export default function createContainerDecorator<
           left: 40 * index,
         }));
       }
-    }, [childCount, posType]);
+    }, [itemCount, posType]);
 
     return (
       <Story

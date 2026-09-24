@@ -5,33 +5,14 @@ import type {
   PackLayoutOptions,
   PinLayoutOptions,
   StackLayoutOptions,
-  StyleLayout,
   TileLayoutOptions,
 } from '@niche-works/style-layouts';
-import {
-  balance,
-  flow,
-  matrix,
-  pack,
-  pin,
-  stack,
-  tile,
-} from '@niche-works/style-layouts';
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const LAYOUTS: Record<string, StyleLayout<any>> = {
-  balance,
-  flow,
-  matrix,
-  pack,
-  pin,
-  stack,
-  tile,
-} as const;
+import type { ApplyLayoutOptions } from '../applyLayout';
 
 export const LAYOUT_PROPS_KEYS: {
   [K in keyof Required<
-    BalanceLayoutOptions &
+    ApplyLayoutOptions &
+      BalanceLayoutOptions &
       FlowLayoutOptions &
       MatrixLayoutOptions &
       PackLayoutOptions &
@@ -40,6 +21,9 @@ export const LAYOUT_PROPS_KEYS: {
       TileLayoutOptions
   >]: 1;
 } = {
+  className: 1,
+  scroll: 1,
+  style: 1,
   direction: 1,
   alignX: 1,
   alignY: 1,
@@ -48,12 +32,12 @@ export const LAYOUT_PROPS_KEYS: {
   gap: 1,
   gapX: 1,
   gapY: 1,
-  childSizeX: 1,
-  childSizeY: 1,
-  childRatioX: 1,
-  childRatioY: 1,
-  childCountX: 1,
-  childCountY: 1,
+  itemSizeX: 1,
+  itemSizeY: 1,
+  itemRatioX: 1,
+  itemRatioY: 1,
+  itemCountX: 1,
+  itemCountY: 1,
   tracksX: 1,
   tracksY: 1,
-};
+} as const;

@@ -53,7 +53,7 @@ const StackContainer = withStackLayout(Container);
   alignX="left"
   alignY="top"
   adjustX="grow"
-  childSizeX="200px"
+  itemSizeX="200px"
   spacing="8px"
 />;
 ```
@@ -74,7 +74,7 @@ const FlowContainer = withFlowLayout(Container);
   alignX="left"
   alignY="top"
   adjustX="grow"
-  childSizeX="200px"
+  itemSizeX="200px"
   spacing="8px"
 />;
 ```
@@ -94,15 +94,15 @@ const MatrixContainer = withMatrixLayout(Container);
 
 <MatrixContainer
   direction="x"
-  childCountX={3}
+  itemCountX={3}
   childY={[200, 100, '1fr']}
-  childSizeX="200px"
+  itemSizeX="200px"
   adjustX="fit"
   spacing="8px"
 />;
 ```
 
-For each axis, either `childCount` or `child` is required (specifying both is not allowed).
+For each axis, either `itemCount` or `child` is required (specifying both is not allowed).
 
 > **Note:** This layout assumes the container's size is determined externally. Percentage values may not work as intended in parent elements whose sizes are determined by their children (e.g., `width: max-content`).
 
@@ -117,7 +117,7 @@ const TileContainer = withTileLayout(Container);
 
 // ----------------------
 
-<TileContainer direction="x" childSizeX="200px" adjustX="fit" spacing="8px" />;
+<TileContainer direction="x" itemSizeX="200px" adjustX="fit" spacing="8px" />;
 ```
 
 > **Note:** Similar to `matrix`, this layout assumes the container's size is determined externally.
@@ -139,7 +139,7 @@ const BalanceContainer = withBalanceLayout(Container);
 <BalanceContainer
   direction="x"
   adjustX="grow"
-  childSizeX="200px"
+  itemSizeX="200px"
   spacing="8px"
 />;
 ```
@@ -169,29 +169,29 @@ const PinContainer = withPinLayout(Container);
 
 // ----------------------
 
-<PinContainer childSizeX="100px" childSizeY="80px" />;
+<PinContainer itemSizeX="100px" itemSizeY="80px" />;
 ```
 
 ## Options
 
 ### Option List
 
-| Option         | Type                   | Description                                               |
-| -------------- | ---------------------- | --------------------------------------------------------- |
-| `direction?`   | `'x' \| 'y'`           | Direction of the main axis                                |
-| `alignX?`      | [`AlignX`]()           | Horizontal alignment of child elements                    |
-| `alignY?`      | [`AlignY`]()           | Vertical alignment of child elements                      |
-| `adjustX?`     | [`Adjust`]()           | Horizontal size adjustment for child elements             |
-| `adjustY?`     | [`Adjust`]()           | Vertical size adjustment for child elements               |
-| `spacing?`     | `string \| number`     | Gap between child elements (both horizontal and vertical) |
-| `spacingX?`    | `string \| number`     | Horizontal gap between child elements                     |
-| `spacingY?`    | `string \| number`     | Vertical gap between child elements                       |
-| `childSizeX?`  | `string \| number`     | Width of child elements                                   |
-| `childSizeY?`  | `string \| number`     | Height of child elements                                  |
-| `childCountX?` | `number`               | Number of child elements horizontally                     |
-| `childCountY?` | `number`               | Number of child elements vertically                       |
-| `childX?`      | `(string \| number)[]` | Individual horizontal sizes for each child element        |
-| `childY?`      | `(string \| number)[]` | Individual vertical sizes for each child element          |
+| Option        | Type                   | Description                                               |
+| ------------- | ---------------------- | --------------------------------------------------------- |
+| `direction?`  | `'x' \| 'y'`           | Direction of the main axis                                |
+| `alignX?`     | [`AlignX`]()           | Horizontal alignment of child elements                    |
+| `alignY?`     | [`AlignY`]()           | Vertical alignment of child elements                      |
+| `adjustX?`    | [`Adjust`]()           | Horizontal size adjustment for child elements             |
+| `adjustY?`    | [`Adjust`]()           | Vertical size adjustment for child elements               |
+| `spacing?`    | `string \| number`     | Gap between child elements (both horizontal and vertical) |
+| `spacingX?`   | `string \| number`     | Horizontal gap between child elements                     |
+| `spacingY?`   | `string \| number`     | Vertical gap between child elements                       |
+| `itemSizeX?`  | `string \| number`     | Width of child elements                                   |
+| `itemSizeY?`  | `string \| number`     | Height of child elements                                  |
+| `itemCountX?` | `number`               | Number of child elements horizontally                     |
+| `itemCountY?` | `number`               | Number of child elements vertically                       |
+| `childX?`     | `(string \| number)[]` | Individual horizontal sizes for each child element        |
+| `childY?`     | `(string \| number)[]` | Individual vertical sizes for each child element          |
 
 ### `Adjust` Values
 

@@ -72,10 +72,10 @@ export const ADJUST_DIRECTION_Y_ARG_TYPES: ArgTypes = {
 };
 
 export const CHILD_SIZE_ARG_TYPES: ArgTypes = {
-  childSizeX: {
+  itemSizeX: {
     control: 'text',
   },
-  childSizeY: {
+  itemSizeY: {
     control: 'text',
   },
 };
@@ -93,10 +93,10 @@ export const SPACING_ARG_TYPES: ArgTypes = {
 };
 
 export const CHILD_COUNT_ARG_TYPES: ArgTypes = {
-  childCountX: {
+  itemCountX: {
     control: 'text',
   },
-  childCountY: {
+  itemCountY: {
     control: 'text',
   },
 };
@@ -117,7 +117,7 @@ export const DEBUG_ARG_TYPES: ArgTypes<DebugOptions> = {
   containerHeight: {
     control: 'text',
   },
-  childCount: {
+  itemCount: {
     type: 'number',
   },
   sizeType: {
@@ -205,14 +205,14 @@ export const CHILD_OPTIONS = {
   childY: undefined,
 };
 
-export const CHILD_COUNT_OPTIONS = {
-  childCountX: '4' as any,
-  childCountY: '3' as any,
+export const ITEM_COUNT_OPTIONS = {
+  itemCountX: '4' as any,
+  itemCountY: '3' as any,
 };
 
-export const CHILD_SIZE_OPTIONS = {
-  childSizeX: '60',
-  childSizeY: '120',
+export const ITEM_SIZE_OPTIONS = {
+  itemSizeX: '60',
+  itemSizeY: '120',
 };
 
 export const SPACING_OPTIONS = {
@@ -224,7 +224,7 @@ export const SPACING_OPTIONS = {
 export const DEBUG_PARAMS: DebugOptions = {
   containerWidth: '600',
   containerHeight: '450',
-  childCount: 12,
+  itemCount: 12,
   sizeType: 'none',
   posType: 'none',
 };
@@ -234,7 +234,7 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...DIRECTION_OPTIONS,
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
-    ...CHILD_SIZE_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
     ...SPACING_OPTIONS,
     ...DEBUG_PARAMS,
   } as BalanceLayoutOptions,
@@ -243,7 +243,7 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
     ...SPACING_OPTIONS,
-    ...CHILD_SIZE_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
     ...DEBUG_PARAMS,
   } as FlowLayoutOptions,
   matrix: {
@@ -251,8 +251,8 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
     ...CHILD_OPTIONS,
-    ...CHILD_SIZE_OPTIONS,
-    ...CHILD_COUNT_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
+    ...ITEM_COUNT_OPTIONS,
     ...SPACING_OPTIONS,
     ...DEBUG_PARAMS,
   } as MatrixLayoutOptions,
@@ -262,7 +262,7 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...DEBUG_PARAMS,
   } as PackLayoutOptions,
   pin: {
-    ...CHILD_SIZE_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
     ...DEBUG_PARAMS,
     posType: 'static',
   } as PinLayoutOptions,
@@ -271,14 +271,14 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
     ...SPACING_OPTIONS,
-    ...CHILD_SIZE_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
     ...DEBUG_PARAMS,
   } as StackLayoutOptions,
   tile: {
     ...DIRECTION_OPTIONS,
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
-    ...CHILD_SIZE_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
     ...SPACING_OPTIONS,
     ...DEBUG_PARAMS,
   } as TileLayoutOptions,

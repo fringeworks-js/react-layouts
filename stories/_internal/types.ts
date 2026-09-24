@@ -15,7 +15,7 @@ export type DebugOptions = {
   /**
    * 子要素の数
    */
-  childCount?: number;
+  itemCount?: number;
 
   /**
    * 子要素の幅・高さの決め方
@@ -30,7 +30,7 @@ export type DebugOptions = {
 
 export type ResizableContainerProps = LayoutContainerProps &
   ResizableProps & {
-    childCount: number;
+    itemCount: number;
     sizeType?: string;
     posType?: string;
   };

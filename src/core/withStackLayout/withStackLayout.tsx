@@ -1,11 +1,6 @@
 import stack from '@niche-works/style-layouts/stack';
 import type { LooseDictionary } from '@niche-works/types';
-import type {
-  ElementType,
-  ForwardRefExoticComponent,
-  PropsWithoutRef,
-  RefAttributes,
-} from 'react';
+import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
 import type { WithStackLayoutOptions, WithStackLayoutProps } from './types';
 
@@ -18,8 +13,6 @@ import type { WithStackLayoutOptions, WithStackLayoutProps } from './types';
 export default function withStackLayout<P = LooseDictionary, T = unknown>(
   Component: ElementType<P>,
   options: WithStackLayoutOptions = {},
-): ForwardRefExoticComponent<
-  PropsWithoutRef<P & WithStackLayoutProps> & RefAttributes<T>
-> {
-  return withLayoutBase(Component, stack, options);
+) {
+  return withLayoutBase<WithStackLayoutProps, P, T>(Component, stack, options);
 }

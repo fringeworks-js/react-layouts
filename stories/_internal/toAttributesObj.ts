@@ -7,13 +7,13 @@ import type { LooseDictionary } from '@niche-works/types';
 const NUMBER_PROPS = [
   'containerWidth',
   'containerHeight',
-  'childSizeX',
-  'childSizeY',
+  'itemSizeX',
+  'itemSizeY',
   'spacing',
   'spacingX',
   'spacingY',
-  'childCountX',
-  'childCountY',
+  'itemCountX',
+  'itemCountY',
 ];
 
 // JSON.parseを行うargs
@@ -23,8 +23,8 @@ const JSON_PROPS = ['childX', 'childY'];
 const UNIT_PROPS = [
   'containerWidth',
   'containerHeight',
-  'childSizeX',
-  'childSizeY',
+  'itemSizeX',
+  'itemSizeY',
   'top',
   'left',
   'width',

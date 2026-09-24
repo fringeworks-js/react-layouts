@@ -36,14 +36,14 @@ export type AlignOptions = {
 export type AdjustOptions = {
   /**
    * 子要素の幅の調整
-   * childSizeXを指定した場合に有効
+   * itemSizeXを指定した場合に有効
    * デフォルトは`none`
    */
   adjustX?: Adjust;
 
   /**
    * 子要素の高さの調整
-   * childSizeYを指定した場合に有効
+   * itemSizeYを指定した場合に有効
    * デフォルトは`none`
    */
   adjustY?: Adjust;
@@ -76,12 +76,12 @@ export type ChildSizeOptions = {
   /**
    * 子要素の幅
    */
-  childSizeX?: ChildSize;
+  itemSizeX?: ChildSize;
 
   /**
    * 子要素の高さ
    */
-  childSizeY?: ChildSize;
+  itemSizeY?: ChildSize;
 };
 
 /**
@@ -91,12 +91,12 @@ export type ChildCountOptions = {
   /**
    * 横方向の要素数
    */
-  childCountX?: number;
+  itemCountX?: number;
 
   /**
    * 縦方向の要素数
    */
-  childCountY?: number;
+  itemCountY?: number;
 };
 
 /**
@@ -105,13 +105,13 @@ export type ChildCountOptions = {
 export type ChildOptions = {
   /**
    * 横方向の設定
-   * このプロパティが設定されている場合、childCountX,childSizeXは無効
+   * このプロパティが設定されている場合、itemCountX,itemSizeXは無効
    */
   childX?: (string | number)[];
 
   /**
    * 縦方向の設定
-   * このプロパティが設定されている場合、childCountY,childSizeYは無効
+   * このプロパティが設定されている場合、itemCountY,itemSizeYは無効
    */
   childY?: (string | number)[];
 };
@@ -140,7 +140,7 @@ export type DebugOptions = {
   /**
    * 子要素の数
    */
-  childCount?: number;
+  itemCount?: number;
 
   /**
    * 子要素の幅・高さの決め方

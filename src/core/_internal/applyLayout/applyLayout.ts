@@ -1,5 +1,7 @@
-import type { CreateLayout } from '@niche-works/style-layouts';
+import type { StyleLayout } from '@niche-works/style-layouts';
 import type { LooseDictionary } from '@niche-works/types';
+import clsx from 'clsx';
+import type { CSSProperties } from 'react';
 import type { ApplyLayoutOptions, ApplyLayoutResult } from './types';
 
 /**
@@ -9,22 +11,23 @@ import type { ApplyLayoutOptions, ApplyLayoutResult } from './types';
 export default function applyLayout<
   P extends LooseDictionary = LooseDictionary,
 >(
-  layout: CreateLayout,
+  layout: StyleLayout,
   options: ApplyLayoutOptions<P> = {} as P,
 ): ApplyLayoutResult {
-  const { scroll, style, ...rest } = options;
+  const { className, scroll, style: optionStyle, ...rest } = options;
+  const style: CSSProperties = { ...optionStyle };
   // コンテナーのスタイル
-  const { className, style: layoutedStyle = {} } = layout(rest);
+  const { className: layoutedClassName, style: layoutedStyle } = layout(rest);
   if (scroll) {
-    layoutedStyle.overflow = 'auto';
+    style.overflow = 'auto';
   }
-  if (style) {
+  if (layoutedStyle) {
     // スタイルのマージ
-    Object.assign(layoutedStyle, style);
+    Object.assign(style, layoutedStyle);
   }
 
   return {
-    className,
-    style: layoutedStyle,
+    className: clsx(className, layoutedClassName),
+    style,
   };
 }

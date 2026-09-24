@@ -1,4 +1,5 @@
-import type { CreateLayout } from '@niche-works/style-layouts';
+import type { StyleProxyOptions } from '@niche-works/react-style-proxy/styleProxy';
+import type { StyleLayout } from '@niche-works/style-layouts';
 import type { ReactNode } from 'react';
 import type { ApplyLayoutOptions } from '../applyLayout';
 
@@ -7,10 +8,10 @@ export type WithLayoutBaseProps = ApplyLayoutOptions & {
    * レイアウト関数
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  layout?: CreateLayout<any>;
+  layout?: StyleLayout<any>;
 };
 
-export type WithLayoutBaseOptions = {
+export type WithLayoutBaseOptions = StyleProxyOptions & {
   /**
    * コンポーネントに設定するdisplayName
    */

@@ -1,11 +1,6 @@
 import flow from '@niche-works/style-layouts/flow';
 import type { LooseDictionary } from '@niche-works/types';
-import type {
-  ElementType,
-  ForwardRefExoticComponent,
-  PropsWithoutRef,
-  RefAttributes,
-} from 'react';
+import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
 import type { WithFlowLayoutOptions, WithFlowLayoutProps } from './types';
 
@@ -18,8 +13,6 @@ import type { WithFlowLayoutOptions, WithFlowLayoutProps } from './types';
 export default function withFlowLayout<P = LooseDictionary, T = unknown>(
   Component: ElementType<P>,
   options: WithFlowLayoutOptions = {},
-): ForwardRefExoticComponent<
-  PropsWithoutRef<P & WithFlowLayoutProps> & RefAttributes<T>
-> {
-  return withLayoutBase(Component, flow, options);
+) {
+  return withLayoutBase<WithFlowLayoutProps, P, T>(Component, flow, options);
 }

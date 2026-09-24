@@ -1,9 +1,13 @@
-import type { LayoutResult } from '@niche-works/style-layouts';
 import type { LooseDictionary } from '@niche-works/types';
 import type { CSSProperties } from 'react';
 
 export type ApplyLayoutOptions<P extends LooseDictionary = LooseDictionary> =
   P & {
+    /**
+     * クラス
+     */
+    className?: string;
+
     /**
      * スクロールの有無
      */
@@ -15,4 +19,14 @@ export type ApplyLayoutOptions<P extends LooseDictionary = LooseDictionary> =
     style?: CSSProperties;
   };
 
-export type ApplyLayoutResult = LayoutResult;
+export type ApplyLayoutResult = {
+  /**
+   * クラス
+   */
+  className: string;
+
+  /**
+   * スタイル
+   */
+  style: CSSProperties;
+};

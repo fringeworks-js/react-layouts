@@ -1,16 +1,19 @@
 import { styleProxy } from '@niche-works/react-style-proxy';
-import ensureComponent from '@niche-works/react/utils/ensureComponent';
-import type { CreateLayout } from '@niche-works/style-layouts';
+import ensureComponent from '@niche-works/react-utils/utils/ensureComponent';
+import type { StyleLayout } from '@niche-works/style-layouts';
+import type { LooseDictionary } from '@niche-works/types';
 import clsx from 'clsx';
-import type { ElementType } from 'react';
-import { createElement, forwardRef } from 'react';
-import { LAYOUT_PROPS_KEYS } from '../../_constants';
-import applyLayout from '../applyLayout';
 import type {
-  ContainerComponentProps,
-  WithLayoutBaseOptions,
-  WithLayoutBaseProps,
-} from './types';
+  ElementType,
+  ForwardRefExoticComponent,
+  PropsWithoutRef,
+  RefAttributes,
+} from 'react';
+import { createElement, forwardRef } from 'react';
+import { LAYOUT_PROPS_KEYS } from './_constants';
+import type { ApplyLayoutOptions } from '../applyLayout';
+import applyLayout from '../applyLayout';
+import type { ContainerComponentProps, WithLayoutBaseOptions } from './types';
 
 /**
  * コンテナーのレイアウト機能を追加するHOC
@@ -19,41 +22,44 @@ import type {
  * @returns
  */
 export default function withLayoutBase<
+  L extends LooseDictionary = LooseDictionary,
   P extends ContainerComponentProps = ContainerComponentProps,
   T = unknown,
 >(
   Component: ElementType<P>,
-  layout: CreateLayout,
+  layout: StyleLayout,
   options: WithLayoutBaseOptions = {},
-) {
+): ForwardRefExoticComponent<
+  PropsWithoutRef<P & L & ApplyLayoutOptions> & RefAttributes<T>
+> {
   const EnsuredComponent = ensureComponent(Component);
   const name = EnsuredComponent.displayName ?? 'unknown';
-  const { displayName = `withLayout(${name})`, className: staticClassName } =
-    options;
+  const {
+    displayName = `withLayout(${name})`,
+    className: staticClassName,
+    ...stypeProxyOptions
+  } = options;
   /**
    * レイアウト機能を追加したコンテナー
    */
-  const LayoutComponent = forwardRef<T, P & WithLayoutBaseProps>(
+  const LayoutComponent = forwardRef<T, P & L & ApplyLayoutOptions>(
     (props, ref) => {
-      const { className, ...rest } = props;
-      const { className: clsNm, style: cssVariables } = applyLayout(
-        layout,
-        rest,
-      );
+      const layoutProps = applyLayout(layout, props);
       // restからlayout用のプロパティを削除
-      const containerPropsBase = { ...rest };
+      const containerPropsBase = { ...props };
       for (const key in LAYOUT_PROPS_KEYS) {
         delete containerPropsBase[key];
       }
       // コンテナーのスタイルにCSS変数の値を反映
       const containerProps = styleProxy<P>(
         containerPropsBase as unknown as P,
-        cssVariables,
+        layoutProps.style,
+        stypeProxyOptions,
       );
 
       return createElement(EnsuredComponent, {
         ref,
-        className: clsx(staticClassName, clsNm, className),
+        className: clsx(staticClassName, layoutProps.className),
         ...containerProps,
       });
     },

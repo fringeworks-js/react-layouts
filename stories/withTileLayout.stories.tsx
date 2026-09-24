@@ -25,6 +25,6 @@ export const Default: Story = {
   argTypes: ARG_TYPES.tile,
   args: {
     ...ARGS.tile,
-    childCount: 12,
+    itemCount: 12,
   },
 };

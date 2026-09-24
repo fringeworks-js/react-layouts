@@ -25,6 +25,6 @@ export const Default: Story = {
   argTypes: ARG_TYPES.pin,
   args: {
     ...ARGS.pin,
-    childCount: 12,
+    itemCount: 12,
   },
 };
