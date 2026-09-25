@@ -12,8 +12,8 @@ importers:
         specifier: ^0.2.1
         version: 0.2.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@niche-works/react-utils':
-        specifier: ^0.1.0
-        version: 0.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: ^0.2.0
+        version: 0.2.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@niche-works/style-layouts':
         specifier: ^0.5.0
         version: 0.5.0
@@ -819,11 +819,11 @@ packages:
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@niche-works/react-utils@0.1.0':
-    resolution: {integrity: sha512-+fHkTmrzvgQZQ1guL7Yo0P/faXplUxF5By7Jt18hiRgrbwJrM+9WSn5vTgC1v4V0673QpBOhuzKOZbr9dqZGCw==}
+  '@niche-works/react-utils@0.2.1':
+    resolution: {integrity: sha512-BhToipmCwIopr5vdNihJwA7DE8yCmkdr51PlC4947OyPbD+IkF2dCotg0TQ54UV79LJEemYCviQNoCbCjeAEBA==}
     peerDependencies:
-      react: ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
       react-dom:
         optional: true
@@ -4082,9 +4082,8 @@ snapshots:
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
 
-  '@niche-works/react-utils@0.1.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@niche-works/react-utils@0.2.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@niche-works/types': 0.3.2
       '@niche-works/utils': 0.4.2
       react: 19.2.7
     optionalDependencies:

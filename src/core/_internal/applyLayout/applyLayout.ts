@@ -1,4 +1,4 @@
-import type { StyleLayout } from '@niche-works/style-layouts';
+import type { CreateLayoutStyle } from '@niche-works/style-layouts';
 import type { LooseDictionary } from '@niche-works/types';
 import { unsafeCast } from '@niche-works/utils';
 import clsx from 'clsx';
@@ -12,7 +12,7 @@ import type { ApplyLayoutOptions, ApplyLayoutResult } from './types';
  * @returns
  */
 export default function applyLayout<O extends object = LooseDictionary>(
-  layout: StyleLayout<O>,
+  layout: CreateLayoutStyle<O>,
   options: ApplyLayoutOptions<O> = unsafeCast<ApplyLayoutOptions<O>>({}),
 ): ApplyLayoutResult {
   const { className, scroll, style: optionStyle, ...rest } = options;

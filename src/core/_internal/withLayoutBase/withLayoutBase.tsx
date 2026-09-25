@@ -1,6 +1,6 @@
 import { styleProxy } from '@niche-works/react-style-proxy';
 import ensureComponent from '@niche-works/react-utils/utils/ensureComponent';
-import type { StyleLayout } from '@niche-works/style-layouts';
+import type { CreateLayoutStyle } from '@niche-works/style-layouts';
 import type { LooseDictionary } from '@niche-works/types';
 import { unsafeCast } from '@niche-works/utils';
 import clsx from 'clsx';
@@ -23,7 +23,7 @@ import type {
  */
 export default function withLayoutBase<C extends ElementType, O extends object>(
   Component: C,
-  layout: StyleLayout<O>,
+  layout: CreateLayoutStyle<O>,
   options: WithLayoutBaseOptions = {},
 ): LayoutComponent<C, O> {
   type Props = WithLayoutProps<C, O>;

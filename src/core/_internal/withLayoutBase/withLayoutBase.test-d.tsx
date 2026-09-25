@@ -1,4 +1,4 @@
-import type { StyleLayout } from '@niche-works/style-layouts';
+import type { CreateLayoutStyle } from '@niche-works/style-layouts';
 import type { ComponentProps, ComponentRef, ReactNode } from 'react';
 import { forwardRef } from 'react';
 import { describe, expectTypeOf, it } from 'vitest';
@@ -22,7 +22,7 @@ type TestLayoutOptions = {
 /**
  * テスト用のレイアウト
  */
-const testLayout: StyleLayout<TestLayoutOptions> = () => ({});
+const testLayout: CreateLayoutStyle<TestLayoutOptions> = () => ({});
 
 /**
  * テスト用のコンポーネント

@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@niche-works/react-style-proxy": "^0.2.1",
-    "@niche-works/react-utils": "^0.1.0",
+    "@niche-works/react-utils": "^0.2.0",
     "@niche-works/style-layouts": "^0.5.0",
     "@niche-works/types": "^0.3.2",
     "@niche-works/utils": "^0.4.2",
