@@ -10,7 +10,9 @@ export {
  */
 export const LayoutType = {
   balance: 'balance',
+  center: 'center',
   flow: 'flow',
+  layer: 'layer',
   matrix: 'matrix',
   pack: 'pack',
   pin: 'pin',

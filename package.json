@@ -1,6 +1,6 @@
 {
   "name": "@niche-works/react-layout",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": true,
   "keywords": [
     "react",
@@ -53,7 +53,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@eslint/js": "^10.0.1",
-    "@niche-works/dev": "^0.5.4",
+    "@niche-works/dev": "^0.5.5",
     "@niche-works/react-parts-props": "^0.1.2",
     "@niche-works/react-style-props": "^0.2.4",
     "@niche-works/rollup-plugin-dist-package": "^0.2.2",

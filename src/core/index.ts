@@ -1,8 +1,12 @@
 export * from './constants';
 export type * from './withBalanceLayout';
 export { default as withBalanceLayout } from './withBalanceLayout';
+export type * from './withCenterLayout';
+export { default as withCenterLayout } from './withCenterLayout';
 export type * from './withFlowLayout';
 export { default as withFlowLayout } from './withFlowLayout';
+export type * from './withLayerLayout';
+export { default as withLayerLayout } from './withLayerLayout';
 export type * from './withMatrixLayout';
 export { default as withMatrixLayout } from './withMatrixLayout';
 export type * from './withPackLayout';

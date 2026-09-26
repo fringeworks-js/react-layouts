@@ -7,7 +7,7 @@ import type {
   StackLayoutOptions,
   TileLayoutOptions,
 } from '@niche-works/style-layouts';
-import type { ApplyLayoutOptions } from '../applyLayout';
+import type { ApplyLayoutOptions } from './applyLayout';
 
 export const LAYOUT_PROPS_KEYS: {
   [K in keyof Required<

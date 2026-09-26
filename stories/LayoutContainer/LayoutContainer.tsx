@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import withLayout from '../../src/withLayout';
 import Box from '../Box';
-import type { LayoutContainerProps } from './types';
 
-const LayoutContainer = withLayout<LayoutContainerProps, HTMLDivElement>(Box, {
+const LayoutContainer = withLayout(Box, {
   displayName: 'LayoutContainer',
 });
 export default LayoutContainer;

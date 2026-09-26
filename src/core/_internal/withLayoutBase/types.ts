@@ -40,7 +40,7 @@ export type WithLayoutProps<C extends ElementType, O> = Omit<
 /**
  * レイアウト機能を追加したコンポーネント
  */
-export type LayoutComponent<
+export type LayoutComponentBase<
   C extends ElementType,
   O,
 > = ForwardRefExoticComponent<

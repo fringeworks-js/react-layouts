@@ -190,8 +190,8 @@ const PinContainer = withPinLayout(Container);
 | `itemSizeY?`  | `string \| number`     | Height of child elements                                  |
 | `itemCountX?` | `number`               | Number of child elements horizontally                     |
 | `itemCountY?` | `number`               | Number of child elements vertically                       |
-| `childX?`     | `(string \| number)[]` | Individual horizontal sizes for each child element        |
-| `childY?`     | `(string \| number)[]` | Individual vertical sizes for each child element          |
+| `tracksX?`    | `(string \| number)[]` | Individual horizontal sizes for each child element        |
+| `tracksY?`    | `(string \| number)[]` | Individual vertical sizes for each child element          |
 
 ### `Adjust` Values
 

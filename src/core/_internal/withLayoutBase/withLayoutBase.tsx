@@ -6,11 +6,11 @@ import { unsafeCast } from '@niche-works/utils';
 import clsx from 'clsx';
 import type { ComponentRef, ElementType } from 'react';
 import { createElement, forwardRef } from 'react';
+import { LAYOUT_PROPS_KEYS } from '../_constants';
 import type { ApplyLayoutOptions } from '../applyLayout';
 import applyLayout from '../applyLayout';
-import { LAYOUT_PROPS_KEYS } from './_constants';
 import type {
-  LayoutComponent,
+  LayoutComponentBase,
   WithLayoutBaseOptions,
   WithLayoutProps,
 } from './types';
@@ -25,7 +25,7 @@ export default function withLayoutBase<C extends ElementType, O extends object>(
   Component: C,
   layout: CreateLayoutStyle<O>,
   options: WithLayoutBaseOptions = {},
-): LayoutComponent<C, O> {
+): LayoutComponentBase<C, O> {
   type Props = WithLayoutProps<C, O>;
 
   // 公開シグネチャは厳密に保ち、内部の型の辻褄合わせはここに閉じ込める

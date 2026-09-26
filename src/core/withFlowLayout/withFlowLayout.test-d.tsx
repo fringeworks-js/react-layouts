@@ -1,7 +1,7 @@
 import type { FlowLayoutOptions } from '@niche-works/style-layouts/flow';
 import type { ComponentProps, ComponentRef, ReactNode } from 'react';
 import { describe, expectTypeOf, it } from 'vitest';
-import { LAYOUT_PROPS_KEYS } from '../_internal/withLayoutBase/_constants';
+import { LAYOUT_PROPS_KEYS } from '../_internal/_constants';
 import type { AllKeys } from '../_internal/withLayoutBase/types';
 import withFlowLayout from './withFlowLayout';
 

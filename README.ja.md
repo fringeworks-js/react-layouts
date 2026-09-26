@@ -188,8 +188,8 @@ const PinContainer = withPinLayout(Container);
 | `itemSizeY?`  | `string \| number`       | 子要素の高さ                 |
 | `itemCountX?` | `number`                 | 子要素の横方向の数           |
 | `itemCountY?` | `number`                 | 子要素の縦方向の数           |
-| `childX?`     | `(string \| number)[]`   | 子要素の横方向の個々のサイズ |
-| `childY?`     | `(string \| number)[]`   | 子要素の縦方向の個々のサイズ |
+| `tracksX?`    | `(string \| number)[]`   | 子要素の横方向の個々のサイズ |
+| `tracksY?`    | `(string \| number)[]`   | 子要素の縦方向の個々のサイズ |
 
 ### `Adjust` の値
 

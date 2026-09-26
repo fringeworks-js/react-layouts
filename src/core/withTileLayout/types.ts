@@ -1,7 +1,7 @@
 import type { TileLayoutOptions } from '@niche-works/style-layouts/tile';
 import type { ElementType } from 'react';
 import type {
-  LayoutComponent,
+  LayoutComponentBase,
   WithLayoutBaseOptions,
 } from '../_internal/withLayoutBase';
 
@@ -9,7 +9,7 @@ export type WithTileLayoutProps = TileLayoutOptions;
 
 export type WithTileLayoutOptions = WithLayoutBaseOptions;
 
-export type TileLayoutComponent<C extends ElementType> = LayoutComponent<
+export type TileLayoutComponent<C extends ElementType> = LayoutComponentBase<
   C,
   TileLayoutOptions
 >;
