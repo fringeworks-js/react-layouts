@@ -79,5 +79,6 @@ export default function withLayout<C extends ElementType, O extends object>(
     },
   );
   LayoutComponent.displayName = displayName;
-  return LayoutComponent;
+  // 内部で組み立てた型と公開シグネチャの型はTS上一致しないため、ここで辻褄を合わせる
+  return unsafeCast<LayoutComponent<C>>(LayoutComponent);
 }

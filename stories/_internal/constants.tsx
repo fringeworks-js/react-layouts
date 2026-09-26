@@ -81,13 +81,13 @@ export const CHILD_SIZE_ARG_TYPES: ArgTypes = {
 };
 
 export const SPACING_ARG_TYPES: ArgTypes = {
-  spacing: {
+  gap: {
     control: 'text',
   },
-  spacingX: {
+  gapX: {
     control: 'text',
   },
-  spacingY: {
+  gapY: {
     control: 'text',
   },
 };
@@ -102,10 +102,10 @@ export const CHILD_COUNT_ARG_TYPES: ArgTypes = {
 };
 
 export const CHILD_ARG_TYPES: ArgTypes = {
-  childX: {
+  tracksX: {
     control: 'text',
   },
-  childY: {
+  tracksY: {
     control: 'text',
   },
 };
@@ -200,9 +200,9 @@ export const ADJUST_OPTIONS = {
   adjustY: 'none',
 };
 
-export const CHILD_OPTIONS = {
-  childX: undefined,
-  childY: undefined,
+export const TRACKS_OPTIONS = {
+  tracksX: undefined,
+  tracksY: undefined,
 };
 
 export const ITEM_COUNT_OPTIONS = {
@@ -215,10 +215,10 @@ export const ITEM_SIZE_OPTIONS = {
   itemSizeY: '120',
 };
 
-export const SPACING_OPTIONS = {
-  spacing: '8',
-  spacingX: undefined,
-  spacingY: undefined,
+export const GAP_OPTIONS = {
+  gap: '8',
+  gapX: undefined,
+  gapY: undefined,
 };
 
 export const DEBUG_PARAMS: DebugOptions = {
@@ -235,14 +235,14 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
     ...ITEM_SIZE_OPTIONS,
-    ...SPACING_OPTIONS,
+    ...GAP_OPTIONS,
     ...DEBUG_PARAMS,
   } as BalanceLayoutOptions,
   flow: {
     ...DIRECTION_OPTIONS,
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
-    ...SPACING_OPTIONS,
+    ...GAP_OPTIONS,
     ...ITEM_SIZE_OPTIONS,
     ...DEBUG_PARAMS,
   } as FlowLayoutOptions,
@@ -250,15 +250,15 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...DIRECTION_OPTIONS,
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
-    ...CHILD_OPTIONS,
+    ...TRACKS_OPTIONS,
     ...ITEM_SIZE_OPTIONS,
     ...ITEM_COUNT_OPTIONS,
-    ...SPACING_OPTIONS,
+    ...GAP_OPTIONS,
     ...DEBUG_PARAMS,
   } as MatrixLayoutOptions,
   pack: {
     ...DIRECTION_OPTIONS,
-    ...SPACING_OPTIONS,
+    ...GAP_OPTIONS,
     ...DEBUG_PARAMS,
   } as PackLayoutOptions,
   pin: {
@@ -270,7 +270,7 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...DIRECTION_OPTIONS,
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
-    ...SPACING_OPTIONS,
+    ...GAP_OPTIONS,
     ...ITEM_SIZE_OPTIONS,
     ...DEBUG_PARAMS,
   } as StackLayoutOptions,
@@ -279,7 +279,7 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
     ...ITEM_SIZE_OPTIONS,
-    ...SPACING_OPTIONS,
+    ...GAP_OPTIONS,
     ...DEBUG_PARAMS,
   } as TileLayoutOptions,
 };

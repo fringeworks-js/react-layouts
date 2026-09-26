@@ -21,8 +21,8 @@ importers:
         specifier: ^0.3.2
         version: 0.3.2
       '@niche-works/utils':
-        specifier: ^0.4.2
-        version: 0.4.2
+        specifier: ^0.5.2
+        version: 0.5.2
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -52,8 +52,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.5.0)
       '@niche-works/dev':
-        specifier: ^0.5.4
-        version: 0.5.4
+        specifier: ^0.5.5
+        version: 0.5.5
       '@niche-works/react-parts-props':
         specifier: ^0.1.2
         version: 0.1.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -798,8 +798,11 @@ packages:
   '@niche-works/constants@0.1.3':
     resolution: {integrity: sha512-JMj1HcvFu7+fAsCxtL2kwi+nG/s11vSOLougFqB2bLsszbTL8HfaGaxoPTW/bGrWvfPReRCVP9vBXffqsFutJg==}
 
-  '@niche-works/dev@0.5.4':
-    resolution: {integrity: sha512-dJmRNLnnwUPbCujdwI+MLnxYrYuzixDL2tcMKda3/ah8nTix7KTSrDyn3RovvDy4tBt8oGUqEoK/8WIPKQ1vIg==}
+  '@niche-works/constants@0.2.0':
+    resolution: {integrity: sha512-ZMhtephS7LQRwQpLwTSR+iqd9noDfJw3huJ4S0E/nIGw6h9EZTofzha80hzMRgIBIltlHUHHF7TY3Z9IFCq6Pg==}
+
+  '@niche-works/dev@0.5.5':
+    resolution: {integrity: sha512-mZEt7c07NTW/c3sNNKqr43ezIWQRAb9tXZ7eOGpa0ZDGeieg7dDyrVrXUPHHO0CNk5E+N/hyK3mh15+VFW7WHg==}
 
   '@niche-works/react-parts-props@0.1.2':
     resolution: {integrity: sha512-9kQFG238euiE5klNk0k5SMqliBAmNP8QzzB2xsQ31BabMnlN2xXN5pZ52L+8GsAssZDDts7BOB1YFdA6B6PuHA==}
@@ -842,8 +845,14 @@ packages:
   '@niche-works/types@0.3.2':
     resolution: {integrity: sha512-+RQSEWHCnIPEIsqBAk5TzUobSAHI4Fr9f7euKJKED6fJRb3eKUjiAAAIJhcKu+nuOjm7aX5DPKTMeMByCnpwjg==}
 
+  '@niche-works/types@0.4.0':
+    resolution: {integrity: sha512-gtQEgHlgHpA9BEFGR6IkObiz0sQqg7XED/IATQV2YodPmIfIAsWPssEvXa9YsQz5h1lDGfHUGz1HXjSbo7y6Bw==}
+
   '@niche-works/utils@0.4.2':
     resolution: {integrity: sha512-Kt9UaZQaoqSE+DYavPfsXDWcCSFdUsgDWDrfnUvdm2lq1P+42XMesQvRNFQm2HBGD6YXTaPYhE9ObcfjxfvDUA==}
+
+  '@niche-works/utils@0.5.2':
+    resolution: {integrity: sha512-dX1gbbysF2PHBTknVaHU2CSf0VsfpazPUJSXmZtf7UALK+flw/XHpndtH/LxLAsKiVskTKNSDwf+AJ59vrkLrQ==}
 
   '@niche-works/web-utils@0.1.1':
     resolution: {integrity: sha512-j1pJ/Ii/1zMyZNHq2mrP20ldg18iA13UEONpRkiQUREcQPHD9m38P2YZe2Y2pXvOksnfVzCksdw45o8R0EhRVw==}
@@ -4057,7 +4066,9 @@ snapshots:
 
   '@niche-works/constants@0.1.3': {}
 
-  '@niche-works/dev@0.5.4':
+  '@niche-works/constants@0.2.0': {}
+
+  '@niche-works/dev@0.5.5':
     dependencies:
       fast-glob: 3.3.3
       fs-extra: 11.3.5
@@ -4112,10 +4123,20 @@ snapshots:
     dependencies:
       type-fest: 5.7.0
 
+  '@niche-works/types@0.4.0': {}
+
   '@niche-works/utils@0.4.2':
     dependencies:
       '@niche-works/constants': 0.1.3
       '@niche-works/types': 0.3.2
+      big.js: 6.2.2
+      klona: 2.0.6
+      remeda: 2.39.0
+
+  '@niche-works/utils@0.5.2':
+    dependencies:
+      '@niche-works/constants': 0.2.0
+      '@niche-works/types': 0.4.0
       big.js: 6.2.2
       klona: 2.0.6
       remeda: 2.39.0

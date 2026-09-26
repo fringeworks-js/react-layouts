@@ -19,12 +19,13 @@ import { LayoutType } from '../src/constants';
 import type {
   AdjustOptions,
   AlignOptions,
-  ChildCountOptions,
-  ChildOptions,
-  ChildSizeOptions,
   DebugOptions,
   DirectionOptions,
-  SpacingOptions,
+  GapOptions,
+  ItemCountOptions,
+  ItemRatioOptions,
+  ItemSizeOptions,
+  TracksOptions,
 } from './types';
 
 export const LAYOUT_OPTIONS = Object.values(LayoutType);
@@ -96,7 +97,7 @@ export const ADJUST_DIRECTION_Y_ARG_TYPES: ArgTypes<AdjustOptions> = {
   },
 };
 
-export const CHILD_SIZE_ARG_TYPES: ArgTypes<ChildSizeOptions> = {
+export const ITEM_SIZE_ARG_TYPES: ArgTypes<ItemSizeOptions> = {
   itemSizeX: {
     control: 'text',
   },
@@ -105,19 +106,28 @@ export const CHILD_SIZE_ARG_TYPES: ArgTypes<ChildSizeOptions> = {
   },
 };
 
-export const SPACING_ARG_TYPES: ArgTypes<SpacingOptions> = {
-  spacing: {
+export const ITEM_RATIO_ARG_TYPES: ArgTypes<ItemRatioOptions> = {
+  itemRatioX: {
+    control: 'number',
+  },
+  itemRatioY: {
+    control: 'number',
+  },
+};
+
+export const GAP_ARG_TYPES: ArgTypes<GapOptions> = {
+  gap: {
     control: 'text',
   },
-  spacingX: {
+  gapX: {
     control: 'text',
   },
-  spacingY: {
+  gapY: {
     control: 'text',
   },
 };
 
-export const CHILD_COUNT_ARG_TYPES: ArgTypes<ChildCountOptions> = {
+export const CHILD_COUNT_ARG_TYPES: ArgTypes<ItemCountOptions> = {
   itemCountX: {
     control: 'text',
   },
@@ -126,11 +136,11 @@ export const CHILD_COUNT_ARG_TYPES: ArgTypes<ChildCountOptions> = {
   },
 };
 
-export const CHILD_ARG_TYPES: ArgTypes<ChildOptions> = {
-  childX: {
+export const CHILD_ARG_TYPES: ArgTypes<TracksOptions> = {
+  tracksX: {
     control: 'text',
   },
-  childY: {
+  tracksY: {
     control: 'text',
   },
 };
@@ -161,8 +171,8 @@ export const ARG_TYPES = {
     ...DIRECTION_ARG_TYPES,
     ...ALIGN_ARG_TYPES,
     ...ADJUST_ARG_TYPES,
-    ...SPACING_ARG_TYPES,
-    ...CHILD_SIZE_ARG_TYPES,
+    ...GAP_ARG_TYPES,
+    ...ITEM_SIZE_ARG_TYPES,
     ...CHILD_COUNT_ARG_TYPES,
     ...CHILD_ARG_TYPES,
     ...DEBUG_ARG_TYPES,
@@ -172,7 +182,7 @@ export const ARG_TYPES = {
     ...DIRECTION_ARG_TYPES,
     ...ALIGN_ARG_TYPES,
     ...ADJUST_ARG_TYPES,
-    ...SPACING_ARG_TYPES,
+    ...GAP_ARG_TYPES,
     ...CHILD_COUNT_ARG_TYPES,
     ...CHILD_ARG_TYPES,
     ...DEBUG_ARG_TYPES,
@@ -181,16 +191,16 @@ export const ARG_TYPES = {
     ...DIRECTION_ARG_TYPES,
     ...ALIGN_ARG_TYPES,
     ...ADJUST_ARG_TYPES,
-    ...SPACING_ARG_TYPES,
-    ...CHILD_SIZE_ARG_TYPES,
+    ...GAP_ARG_TYPES,
+    ...ITEM_SIZE_ARG_TYPES,
     ...DEBUG_ARG_TYPES,
   },
   flow: {
     ...DIRECTION_ARG_TYPES,
     ...ALIGN_ARG_TYPES,
     ...ADJUST_ARG_TYPES,
-    ...CHILD_SIZE_ARG_TYPES,
-    ...SPACING_ARG_TYPES,
+    ...ITEM_SIZE_ARG_TYPES,
+    ...GAP_ARG_TYPES,
     ...CHILD_COUNT_ARG_TYPES,
     ...DEBUG_ARG_TYPES,
   },
@@ -198,27 +208,27 @@ export const ARG_TYPES = {
     ...DIRECTION_ARG_TYPES,
     ...ALIGN_ARG_TYPES,
     ...ADJUST_ARG_TYPES,
-    ...SPACING_ARG_TYPES,
+    ...GAP_ARG_TYPES,
     ...CHILD_ARG_TYPES,
     ...CHILD_COUNT_ARG_TYPES,
-    ...CHILD_SIZE_ARG_TYPES,
+    ...ITEM_SIZE_ARG_TYPES,
     ...DEBUG_ARG_TYPES,
   },
   pack: {
     ...DIRECTION_ARG_TYPES,
-    ...SPACING_ARG_TYPES,
+    ...GAP_ARG_TYPES,
     ...DEBUG_ARG_TYPES,
   },
   pin: {
-    ...CHILD_SIZE_ARG_TYPES,
+    ...ITEM_SIZE_ARG_TYPES,
     ...DEBUG_ARG_TYPES,
   },
   stack: {
     ...DIRECTION_ARG_TYPES,
     ...ALIGN_ARG_TYPES,
     ...ADJUST_ARG_TYPES,
-    ...CHILD_SIZE_ARG_TYPES,
-    ...SPACING_ARG_TYPES,
+    ...ITEM_SIZE_ARG_TYPES,
+    ...GAP_ARG_TYPES,
     ...CHILD_COUNT_ARG_TYPES,
     ...DEBUG_ARG_TYPES,
   },
@@ -226,8 +236,24 @@ export const ARG_TYPES = {
     ...DIRECTION_ARG_TYPES,
     ...ALIGN_ARG_TYPES,
     ...ADJUST_ARG_TYPES,
-    ...SPACING_ARG_TYPES,
-    ...CHILD_SIZE_ARG_TYPES,
+    ...GAP_ARG_TYPES,
+    ...ITEM_SIZE_ARG_TYPES,
+    ...DEBUG_ARG_TYPES,
+  },
+  center: {
+    ...DIRECTION_ARG_TYPES,
+    ...ADJUST_ARG_TYPES,
+    ...GAP_ARG_TYPES,
+    ...ITEM_SIZE_ARG_TYPES,
+    ...ITEM_RATIO_ARG_TYPES,
+    ...CHILD_COUNT_ARG_TYPES,
+    ...DEBUG_ARG_TYPES,
+  },
+  layer: {
+    ...ADJUST_ARG_TYPES,
+    ...ITEM_SIZE_ARG_TYPES,
+    ...ITEM_RATIO_ARG_TYPES,
+    ...CHILD_COUNT_ARG_TYPES,
     ...DEBUG_ARG_TYPES,
   },
 } as const;
@@ -246,25 +272,30 @@ export const ADJUST_OPTIONS: AdjustOptions = {
   adjustY: 'none',
 };
 
-export const CHILD_OPTIONS: ChildOptions = {
-  childX: undefined,
-  childY: undefined,
+export const CHILD_OPTIONS: TracksOptions = {
+  tracksX: undefined,
+  tracksY: undefined,
 };
 
-export const ITEM_COUNT_OPTIONS: ChildCountOptions = {
+export const ITEM_COUNT_OPTIONS: ItemCountOptions = {
   itemCountX: '4' as any,
   itemCountY: '3' as any,
 };
 
-export const ITEM_SIZE_OPTIONS: ChildSizeOptions = {
+export const ITEM_SIZE_OPTIONS: ItemSizeOptions = {
   itemSizeX: '60',
   itemSizeY: '120',
 };
 
-export const SPACING_OPTIONS: SpacingOptions = {
-  spacing: '8',
-  spacingX: undefined,
-  spacingY: undefined,
+export const ITEM_RATIO_OPTIONS: ItemRatioOptions = {
+  itemRatioX: 2,
+  itemRatioY: 2,
+};
+
+export const GAP_OPTIONS: GapOptions = {
+  gap: '8',
+  gapX: undefined,
+  gapY: undefined,
 };
 
 export const DEBUG_PARAMS: DebugOptions = {
@@ -281,9 +312,9 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...DIRECTION_ARG_TYPES,
     ...ALIGN_ARG_TYPES,
     ...ADJUST_ARG_TYPES,
-    ...SPACING_ARG_TYPES,
+    ...GAP_ARG_TYPES,
     ...CHILD_OPTIONS,
-    ...CHILD_SIZE_ARG_TYPES,
+    ...ITEM_SIZE_ARG_TYPES,
     ...CHILD_COUNT_ARG_TYPES,
     ...DEBUG_ARG_TYPES,
   },
@@ -292,7 +323,7 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...DIRECTION_ARG_TYPES,
     ...ALIGN_ARG_TYPES,
     ...ADJUST_ARG_TYPES,
-    ...SPACING_ARG_TYPES,
+    ...GAP_ARG_TYPES,
     ...CHILD_COUNT_ARG_TYPES,
     ...DEBUG_ARG_TYPES,
   },
@@ -301,14 +332,14 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
     ...ITEM_SIZE_OPTIONS,
-    ...SPACING_OPTIONS,
+    ...GAP_OPTIONS,
     ...DEBUG_PARAMS,
   },
   flow: {
     ...DIRECTION_OPTIONS,
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
-    ...SPACING_OPTIONS,
+    ...GAP_OPTIONS,
     ...ITEM_SIZE_OPTIONS,
     ...DEBUG_PARAMS,
   },
@@ -319,7 +350,7 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...CHILD_OPTIONS,
     ...ITEM_SIZE_OPTIONS,
     ...ITEM_COUNT_OPTIONS,
-    ...SPACING_OPTIONS,
+    ...GAP_OPTIONS,
     ...DEBUG_PARAMS,
   },
   pin: {
@@ -329,14 +360,14 @@ export const ARGS: Record<string, Record<string, any>> = {
   },
   pack: {
     ...DIRECTION_OPTIONS,
-    ...SPACING_OPTIONS,
+    ...GAP_OPTIONS,
     ...DEBUG_PARAMS,
   },
   stack: {
     ...DIRECTION_OPTIONS,
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
-    ...SPACING_OPTIONS,
+    ...GAP_OPTIONS,
     ...ITEM_SIZE_OPTIONS,
     ...DEBUG_PARAMS,
   },
@@ -345,7 +376,21 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
     ...ITEM_SIZE_OPTIONS,
-    ...SPACING_OPTIONS,
+    ...GAP_OPTIONS,
+    ...DEBUG_PARAMS,
+  },
+  center: {
+    ...DIRECTION_OPTIONS,
+    ...ADJUST_OPTIONS,
+    ...GAP_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
+    ...ITEM_RATIO_OPTIONS,
+    ...DEBUG_PARAMS,
+  },
+  layer: {
+    ...ADJUST_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
+    ...ITEM_RATIO_OPTIONS,
     ...DEBUG_PARAMS,
   },
 };

@@ -52,27 +52,27 @@ export type AdjustOptions = {
 /**
  * 要素間の余白
  */
-export type SpacingOptions = {
+export type GapOptions = {
   /**
    * 余白
    */
-  spacing?: ChildSpacing;
+  gap?: ChildSpacing;
 
   /**
    * 横方向の余白
    */
-  spacingX?: ChildSpacing;
+  gapX?: ChildSpacing;
 
   /**
    * 縦方向の余白
    */
-  spacingY?: ChildSpacing;
+  gapY?: ChildSpacing;
 };
 
 /**
  * 子要素のサイズ
  */
-export type ChildSizeOptions = {
+export type ItemSizeOptions = {
   /**
    * 子要素の幅
    */
@@ -85,9 +85,18 @@ export type ChildSizeOptions = {
 };
 
 /**
+ * 子要素の割合
+ */
+export type ItemRatioOptions = {
+  itemRatioX?: number;
+
+  itemRatioY?: number;
+};
+
+/**
  * 子要素の数
  */
-export type ChildCountOptions = {
+export type ItemCountOptions = {
   /**
    * 横方向の要素数
    */
@@ -102,18 +111,18 @@ export type ChildCountOptions = {
 /**
  * childのテンプレート
  */
-export type ChildOptions = {
+export type TracksOptions = {
   /**
    * 横方向の設定
    * このプロパティが設定されている場合、itemCountX,itemSizeXは無効
    */
-  childX?: (string | number)[];
+  tracksX?: (string | number)[];
 
   /**
    * 縦方向の設定
    * このプロパティが設定されている場合、itemCountY,itemSizeYは無効
    */
-  childY?: (string | number)[];
+  tracksY?: (string | number)[];
 };
 
 /**

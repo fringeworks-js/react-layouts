@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import unit from '@niche-works/react/utils/unit';
+import unit from '@niche-works/utils/string/unit';
 import type { LooseDictionary } from '@niche-works/types';
 
 // 文字列→数値への変換を行うargs

@@ -1,16 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import type { WithLayoutProps } from '../src/withLayout';
 import withLayout from '../src/withLayout';
 import createContainerDecorator from './_internal/createContainerDecorator';
 import createResizableContainer from './_internal/createResizableContainer';
-import type { BoxProps } from './Box';
 import Box from './Box';
 import { ARGS, ARG_TYPES } from './constants';
 
-const ResizableContainer = createResizableContainer(
-  withLayout<BoxProps & WithLayoutProps, HTMLDivElement>(Box),
-);
+const ResizableContainer = createResizableContainer(withLayout(Box));
 const meta = {
   title: 'withLayout',
   component: ResizableContainer,
@@ -26,7 +22,7 @@ export const Balance: Story = {
   args: {
     ...ARGS.balance,
     layout: 'balance',
-    itemCount: 12,
+    itemCount: 5,
   },
 };
 
@@ -35,7 +31,7 @@ export const Flow: Story = {
   args: {
     ...ARGS.flow,
     layout: 'flow',
-    itemCount: 12,
+    itemCount: 5,
   },
 };
 
@@ -45,7 +41,7 @@ export const Pack: Story = {
     ...ARGS.pack,
     layout: 'pack',
     sizeType: 'none',
-    itemCount: 12,
+    itemCount: 5,
   },
 };
 
@@ -54,7 +50,7 @@ export const Matrix: Story = {
   args: {
     ...ARGS.matrix,
     layout: 'matrix',
-    itemCount: 12,
+    itemCount: 5,
   },
 };
 
@@ -63,7 +59,7 @@ export const Pin: Story = {
   args: {
     ...ARGS.pin,
     layout: 'pin',
-    itemCount: 12,
+    itemCount: 5,
   },
 };
 
@@ -72,7 +68,7 @@ export const Stack: Story = {
   args: {
     ...ARGS.stack,
     layout: 'stack',
-    itemCount: 12,
+    itemCount: 5,
   },
 };
 
@@ -81,6 +77,24 @@ export const Tile: Story = {
   args: {
     ...ARGS.tile,
     layout: 'tile',
-    itemCount: 12,
+    itemCount: 5,
+  },
+};
+
+export const Center: Story = {
+  argTypes: ARG_TYPES.center,
+  args: {
+    ...ARGS.center,
+    layout: 'center',
+    itemCount: 5,
+  },
+};
+
+export const Layer: Story = {
+  argTypes: ARG_TYPES.layer,
+  args: {
+    ...ARGS.layer,
+    layout: 'layer',
+    itemCount: 5,
   },
 };
