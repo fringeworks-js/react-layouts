@@ -1,3 +1,2 @@
-import '../core/flow.scss';
-export type * from '../core/withFlowLayout';
-export { default } from '../core/withFlowLayout';
+export type * from './types';
+export { default } from './withFlowLayout';

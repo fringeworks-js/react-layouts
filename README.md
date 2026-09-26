@@ -35,6 +35,27 @@ const StackContainer = withStackLayout(MyContainer);
 </StackContainer>
 ```
 
+### Loading CSS
+
+The HOCs do not import any CSS, so they work as-is in SSR and React Server Components. Import the CSS separately.
+
+```ts
+import { withStackLayout } from '@niche-works/react-layout';
+
+// Import all layouts at once
+import '@niche-works/react-layout/styles.css';
+
+// Or import only what you need
+import '@niche-works/react-layout/stack.css';
+import '@niche-works/react-layout/tile.css';
+```
+
+If you want the CSS to be loaded automatically, use the modules under `with-css`. This requires a bundler that can handle CSS imports.
+
+```ts
+import { withStackLayout } from '@niche-works/react-layout/with-css';
+```
+
 ## Layout Types
 
 ### `stack`

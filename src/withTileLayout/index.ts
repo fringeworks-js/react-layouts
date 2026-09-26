@@ -1,3 +1,2 @@
-import '../core/tile.scss';
-export type * from '../core/withTileLayout';
-export { default } from '../core/withTileLayout';
+export type * from './types';
+export { default } from './withTileLayout';

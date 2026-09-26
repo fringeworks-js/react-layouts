@@ -1,3 +1,2 @@
-import '../core/center.scss';
-export type * from '../core/withCenterLayout';
-export { default } from '../core/withCenterLayout';
+export type * from './types';
+export { default } from './withCenterLayout';

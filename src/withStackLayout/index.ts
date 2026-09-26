@@ -1,3 +1,2 @@
-import '../core/stack.scss';
-export type * from '../core/withStackLayout';
-export { default } from '../core/withStackLayout';
+export type * from './types';
+export { default } from './withStackLayout';

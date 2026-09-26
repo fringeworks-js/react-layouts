@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import withLayout from '../src/withLayout';
+import withLayout from '../src/with-css/withLayout';
 import createContainerDecorator from './_internal/createContainerDecorator';
 import createResizableContainer from './_internal/createResizableContainer';
 import Box from './Box';

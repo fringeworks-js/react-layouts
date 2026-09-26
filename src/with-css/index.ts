@@ -1,4 +1,5 @@
-export * from './constants';
+export * from '../constants';
+export * as styles from './styles';
 export type * from './withBalanceLayout';
 export { default as withBalanceLayout } from './withBalanceLayout';
 export type * from './withCenterLayout';

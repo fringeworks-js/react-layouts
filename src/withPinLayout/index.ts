@@ -1,3 +1,2 @@
-import '../core/pin.scss';
-export type * from '../core/withPinLayout';
-export { default } from '../core/withPinLayout';
+export type * from './types';
+export { default } from './withPinLayout';

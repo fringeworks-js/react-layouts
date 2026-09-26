@@ -1,6 +1,6 @@
 {
   "name": "@niche-works/react-layout",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "private": true,
   "keywords": [
     "react",
@@ -20,9 +20,12 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./*": "./src/*/index.ts",
     "./constants": "./src/constants.ts",
-    "./*/constants": "./src/*/constants.ts"
+    "./*.scss": "./src/css/*.scss",
+    "./*.css": "./src/css/*.scss",
+    "./with-css": "./src/with-css/index.ts",
+    "./with-css/*": "./src/with-css/*/index.ts",
+    "./*": "./src/*/index.ts"
   },
   "main": "./src/index.ts",
   "module": "./src/index.ts",
@@ -39,7 +42,7 @@
   "dependencies": {
     "@niche-works/react-style-proxy": "^0.2.1",
     "@niche-works/react-utils": "^0.2.0",
-    "@niche-works/style-layouts": "^0.5.0",
+    "@niche-works/style-layouts": "^0.7.0",
     "@niche-works/types": "^0.3.2",
     "@niche-works/utils": "^0.5.2",
     "clsx": "^2.1.1",

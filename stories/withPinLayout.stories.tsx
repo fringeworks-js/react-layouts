@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { WithPinLayoutProps } from '../src/withPinLayout';
-import withPinLayout from '../src/withPinLayout';
+import withPinLayout from '../src/with-css/withPinLayout';
 import createContainerDecorator from './_internal/createContainerDecorator';
 import createResizableContainer from './_internal/createResizableContainer';
 import type { BoxProps } from './Box';

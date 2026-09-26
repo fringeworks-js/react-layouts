@@ -33,6 +33,27 @@ const StackContainer = withStackLayout(MyContainer);
 </StackContainer>
 ```
 
+### CSSの読み込み
+
+HOCはCSSをインポートしないため、SSRやReact Server Componentsでもそのまま使用できます。CSSは別途インポートしてください。
+
+```ts
+import { withStackLayout } from '@niche-works/react-layout';
+
+// 全レイアウトをまとめてインポート
+import '@niche-works/react-layout/styles.css';
+
+// 必要なレイアウトのみインポート
+import '@niche-works/react-layout/stack.css';
+import '@niche-works/react-layout/tile.css';
+```
+
+CSSを自動的に読み込みたい場合は `with-css` 配下のモジュールを使用してください。CSSのインポートを扱えるバンドラーが必要です。
+
+```ts
+import { withStackLayout } from '@niche-works/react-layout/with-css';
+```
+
 ## レイアウト種別
 
 ### `stack`

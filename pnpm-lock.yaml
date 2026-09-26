@@ -15,8 +15,8 @@ importers:
         specifier: ^0.2.0
         version: 0.2.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@niche-works/style-layouts':
-        specifier: ^0.5.0
-        version: 0.5.0
+        specifier: ^0.7.0
+        version: 0.7.0
       '@niche-works/types':
         specifier: ^0.3.2
         version: 0.3.2
@@ -836,8 +836,8 @@ packages:
     peerDependencies:
       rollup: ^4.0.0
 
-  '@niche-works/style-layouts@0.5.0':
-    resolution: {integrity: sha512-TuStGO4xFepFcWQBXnHag7V0A7aSNWRAkcuOFN6FtQCO6KM9i3MrvkcUNtrQHzHSaLmdOLnDe5ypoKnCNyTgmQ==}
+  '@niche-works/style-layouts@0.7.0':
+    resolution: {integrity: sha512-gyT1gtsSQB/3UX/OMoSQHVjIdXx+fUjxrKL3NX56C20MkcigRtM9Q+cvfwAEsEgdHkKw6wQKILFxeYmTb4kL+g==}
 
   '@niche-works/style-utils@0.2.0':
     resolution: {integrity: sha512-XLV6IWYRwuys16rBejZHqhLKJiMQ2WRWnIxHvaTHLwijs5qss19ffZfEJ+ssru1Ejvhg6j8XG0bxDUDjs+nZaA==}
@@ -4109,7 +4109,7 @@ snapshots:
       tslib: 2.8.1
       type-fest: 5.7.0
 
-  '@niche-works/style-layouts@0.5.0':
+  '@niche-works/style-layouts@0.7.0':
     dependencies:
       '@niche-works/style-utils': 0.2.0
       '@niche-works/types': 0.3.2

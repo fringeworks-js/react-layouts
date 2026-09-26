@@ -38,23 +38,23 @@ export default defineConfig({
             import: './index.mjs',
             require: './index.cjs',
           },
-          './*': {
-            import: './*/index.mjs',
-            require: './*/index.cjs',
-          },
           './constants': {
             import: './constants.mjs',
             require: './constants.cjs',
           },
-          './core/*': {
-            import: './core/*/index.mjs',
-            require: './core/*/index.cjs',
+          './*.css': './css/*.css',
+          './with-css': {
+            import: './with-css/index.mjs',
+            require: './with-css/index.cjs',
           },
-          './core/constants': {
-            import: './core/constants.mjs',
-            require: './core/constants.cjs',
+          './with-css/*': {
+            import: './with-css/*/index.mjs',
+            require: './with-css/*/index.cjs',
           },
-          './*.css': './core/*.css',
+          './*': {
+            import: './*/index.mjs',
+            require: './*/index.cjs',
+          },
         },
       },
     }),
@@ -66,5 +66,20 @@ export default defineConfig({
         },
       ],
     }),
+    {
+      name: 'fix-css-cjs-extension',
+      renderChunk(code, _, options) {
+        if (options.format !== 'cjs') {
+          return null;
+        }
+        return {
+          code: code.replace(
+            /require\((['"])([^'"]*\/css\/[^'"]+)\.cjs\1\)/g,
+            'require($1$2.css$1)',
+          ),
+          map: null,
+        };
+      },
+    },
   ],
 });

@@ -1,3 +1,2 @@
-import '../core/styles.scss';
-export type * from '../core/withLayout';
-export { default } from '../core/withLayout';
+export type * from './types';
+export { default } from './withLayout';
