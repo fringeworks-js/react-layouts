@@ -5,15 +5,6 @@ import {
   AlignY,
   Direction,
 } from '@niche-works/style-layouts/constants';
-import '@niche-works/style-layouts/core/balance.css';
-import '@niche-works/style-layouts/core/center.css';
-import '@niche-works/style-layouts/core/flow.css';
-import '@niche-works/style-layouts/core/layer.css';
-import '@niche-works/style-layouts/core/matrix.css';
-import '@niche-works/style-layouts/core/pack.css';
-import '@niche-works/style-layouts/core/pin.css';
-import '@niche-works/style-layouts/core/stack.css';
-import '@niche-works/style-layouts/core/tile.css';
 import type { ArgTypes } from '@storybook/react-vite';
 import { LayoutType } from '../src/constants';
 import type {
@@ -250,6 +241,7 @@ export const ARG_TYPES = {
     ...DEBUG_ARG_TYPES,
   },
   layer: {
+    ...ALIGN_ARG_TYPES,
     ...ADJUST_ARG_TYPES,
     ...ITEM_SIZE_ARG_TYPES,
     ...ITEM_RATIO_ARG_TYPES,
@@ -272,7 +264,7 @@ export const ADJUST_OPTIONS: AdjustOptions = {
   adjustY: 'none',
 };
 
-export const CHILD_OPTIONS: TracksOptions = {
+export const TRACKS_OPTIONS: TracksOptions = {
   tracksX: undefined,
   tracksY: undefined,
 };
@@ -288,7 +280,7 @@ export const ITEM_SIZE_OPTIONS: ItemSizeOptions = {
 };
 
 export const ITEM_RATIO_OPTIONS: ItemRatioOptions = {
-  itemRatioX: 2,
+  itemRatioX: 1,
   itemRatioY: 2,
 };
 
@@ -308,24 +300,22 @@ export const DEBUG_PARAMS: DebugOptions = {
 
 export const ARGS: Record<string, Record<string, any>> = {
   all: {
-    ...LAYOUT_ARG_TYPES,
-    ...DIRECTION_ARG_TYPES,
-    ...ALIGN_ARG_TYPES,
-    ...ADJUST_ARG_TYPES,
-    ...GAP_ARG_TYPES,
-    ...CHILD_OPTIONS,
-    ...ITEM_SIZE_ARG_TYPES,
-    ...CHILD_COUNT_ARG_TYPES,
-    ...DEBUG_ARG_TYPES,
+    ...LAYOUT_OPTIONS,
+    ...DIRECTION_OPTIONS,
+    ...ALIGN_OPTIONS,
+    ...ADJUST_OPTIONS,
+    ...GAP_OPTIONS,
+    ...TRACKS_OPTIONS,
+    ...ITEM_SIZE_OPTIONS,
+    ...DEBUG_PARAMS,
   },
   nosize: {
-    ...LAYOUT_ARG_TYPES,
-    ...DIRECTION_ARG_TYPES,
-    ...ALIGN_ARG_TYPES,
-    ...ADJUST_ARG_TYPES,
-    ...GAP_ARG_TYPES,
-    ...CHILD_COUNT_ARG_TYPES,
-    ...DEBUG_ARG_TYPES,
+    ...LAYOUT_OPTIONS,
+    ...DIRECTION_OPTIONS,
+    ...ALIGN_OPTIONS,
+    ...ADJUST_OPTIONS,
+    ...GAP_OPTIONS,
+    ...DEBUG_PARAMS,
   },
   balance: {
     ...DIRECTION_OPTIONS,
@@ -347,7 +337,7 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...DIRECTION_OPTIONS,
     ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
-    ...CHILD_OPTIONS,
+    ...TRACKS_OPTIONS,
     ...ITEM_SIZE_OPTIONS,
     ...ITEM_COUNT_OPTIONS,
     ...GAP_OPTIONS,
@@ -388,6 +378,7 @@ export const ARGS: Record<string, Record<string, any>> = {
     ...DEBUG_PARAMS,
   },
   layer: {
+    ...ALIGN_OPTIONS,
     ...ADJUST_OPTIONS,
     ...ITEM_SIZE_OPTIONS,
     ...ITEM_RATIO_OPTIONS,

@@ -1,16 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import type { WithTileLayoutProps } from '../src/withTileLayout';
 import withTileLayout from '../src/with-css/withTileLayout';
 import createContainerDecorator from './_internal/createContainerDecorator';
 import createResizableContainer from './_internal/createResizableContainer';
-import type { BoxProps } from './Box';
 import Box from './Box';
 import { ARGS, ARG_TYPES } from './constants';
 
-const ResizableContainer = createResizableContainer(
-  withTileLayout<BoxProps & WithTileLayoutProps, HTMLDivElement>(Box),
-);
+const ResizableContainer = createResizableContainer(withTileLayout(Box));
 const meta = {
   title: 'withTileLayout',
   component: ResizableContainer,
@@ -25,6 +21,6 @@ export const Default: Story = {
   argTypes: ARG_TYPES.tile,
   args: {
     ...ARGS.tile,
-    itemCount: 12,
+    itemCount: 5,
   },
 };

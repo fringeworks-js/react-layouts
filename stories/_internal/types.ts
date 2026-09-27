@@ -1,5 +1,7 @@
+import { LooseDictionary } from '@niche-works/types';
 import type { ResizableProps } from 're-resizable';
-import type { LayoutContainerProps } from '../LayoutContainer';
+import { ElementType } from 'react';
+import type { WithLayoutProps } from '../../src/_internal/withLayoutBase';
 
 export type DebugOptions = {
   /**
@@ -28,7 +30,10 @@ export type DebugOptions = {
   posType?: 'none' | 'rand' | 'static';
 };
 
-export type ResizableContainerProps = LayoutContainerProps &
+export type ResizableContainerProps<
+  C extends ElementType = ElementType,
+  O = LooseDictionary,
+> = WithLayoutProps<C, O> &
   ResizableProps & {
     itemCount: number;
     sizeType?: string;

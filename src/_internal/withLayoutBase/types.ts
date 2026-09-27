@@ -1,4 +1,5 @@
 import type { StyleProxyOptions } from '@niche-works/react-style-proxy/styleProxy';
+import type { CreateLayoutStyle } from '@niche-works/style-layouts';
 import type {
   ComponentPropsWithoutRef,
   ComponentRef,
@@ -16,6 +17,16 @@ import type { LayoutBaseProps } from '../applyLayout';
  * 分配してから取り出す
  */
 export type AllKeys<T> = T extends unknown ? keyof T : never;
+
+/**
+ * 適用するレイアウト
+ *
+ * - レイアウト関数: 常にそのレイアウトを適用する（静的）
+ * - レイアウト関数のマップ: `layout`プロパティで選択したレイアウトを適用する（動的）
+ */
+export type LayoutSource<O> =
+  | CreateLayoutStyle<O>
+  | Record<string, CreateLayoutStyle<never>>;
 
 /**
  * HOCのオプション

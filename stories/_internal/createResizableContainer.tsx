@@ -2,7 +2,7 @@
 /** @jsxImportSource @emotion/react */
 import { distribute } from '@niche-works/utils';
 import { Resizable } from 're-resizable';
-import { ComponentType } from 'react';
+import { ComponentProps, ComponentType } from 'react';
 import type { ResizableContainerProps } from './types';
 
 const RESIZABLE_PROPS = [
@@ -38,12 +38,20 @@ const RESIZABLE_PROPS = [
   'snapGap',
 ] as const;
 
-export default function createResizableContainer(
-  Component: ComponentType<any>,
+export default function createResizableContainer<C extends ComponentType>(
+  Component: C,
 ) {
-  return (props: ResizableContainerProps) => {
+  type Props = Omit<ComponentProps<C>, keyof ResizableContainerProps> &
+    ResizableContainerProps & {
+      containerWidth?: string | number;
+      containerHeight?: string | number;
+      itemCount?: number;
+      sizeType?: string;
+      posType?: string;
+    };
+  return (props: Props) => {
     const { children, ...rest } = props;
-    const { resizableProps, containerProps } = distribute(rest, {
+    const { resizableProps, containerProps } = distribute(rest as any, {
       resizableProps: RESIZABLE_PROPS as any,
       containerProps: null,
     });
@@ -51,7 +59,7 @@ export default function createResizableContainer(
     return (
       <Resizable {...resizableProps}>
         <Component
-          {...containerProps}
+          {...(containerProps as any)}
           style={{
             width: '100%',
             height: '100%',

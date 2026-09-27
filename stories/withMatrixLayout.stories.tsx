@@ -1,15 +1,15 @@
 /** @jsxImportSource @emotion/react */
+import { unsafeCast } from '@niche-works/utils';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import type { WithMatrixLayoutProps } from '../src/withMatrixLayout';
+import { ComponentType } from 'react';
 import withMatrixLayout from '../src/with-css/withMatrixLayout';
 import createContainerDecorator from './_internal/createContainerDecorator';
 import createResizableContainer from './_internal/createResizableContainer';
-import type { BoxProps } from './Box';
 import Box from './Box';
 import { ARGS, ARG_TYPES } from './constants';
 
 const ResizableContainer = createResizableContainer(
-  withMatrixLayout<BoxProps & WithMatrixLayoutProps, HTMLDivElement>(Box),
+  unsafeCast<ComponentType>(withMatrixLayout(Box)),
 );
 const meta = {
   title: 'withMatrixLayout',
@@ -25,6 +25,6 @@ export const Default: Story = {
   argTypes: ARG_TYPES.matrix,
   args: {
     ...ARGS.matrix,
-    itemCount: 12,
+    itemCount: 5,
   },
 };

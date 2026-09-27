@@ -1,12 +1,16 @@
 /** @jsxImportSource @emotion/react */
+import { unsafeCast } from '@niche-works/utils';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { ComponentType } from 'react';
 import withLayout from '../src/with-css/withLayout';
 import createContainerDecorator from './_internal/createContainerDecorator';
 import createResizableContainer from './_internal/createResizableContainer';
 import Box from './Box';
 import { ARGS, ARG_TYPES } from './constants';
 
-const ResizableContainer = createResizableContainer(withLayout(Box));
+const ResizableContainer = createResizableContainer(
+  unsafeCast<ComponentType>(withLayout(Box)),
+);
 const meta = {
   title: 'withLayout',
   component: ResizableContainer,

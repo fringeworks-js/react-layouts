@@ -1,16 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import type { WithBalanceLayoutProps } from '../src/withBalanceLayout';
 import withBalanceLayout from '../src/with-css/withBalanceLayout';
 import createContainerDecorator from './_internal/createContainerDecorator';
 import createResizableContainer from './_internal/createResizableContainer';
-import type { BoxProps } from './Box';
 import Box from './Box';
 import { ARGS, ARG_TYPES } from './constants';
 
-const ResizableContainer = createResizableContainer(
-  withBalanceLayout<BoxProps & WithBalanceLayoutProps, HTMLDivElement>(Box),
-);
+const ResizableContainer = createResizableContainer(withBalanceLayout(Box));
 const meta = {
   title: 'withBalanceLayout',
   component: ResizableContainer,
@@ -25,6 +21,6 @@ export const Default: Story = {
   argTypes: ARG_TYPES.balance,
   args: {
     ...ARGS.balance,
-    itemCount: 12,
+    itemCount: 5,
   },
 };
