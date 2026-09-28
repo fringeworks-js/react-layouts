@@ -1,7 +1,9 @@
 export {
   Adjust,
   AlignX,
+  AlignXBase,
   AlignY,
+  AlignYBase,
   Direction,
 } from '@niche-works/style-layouts/constants';
 

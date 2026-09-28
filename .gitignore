@@ -32,3 +32,4 @@ tsconfig.tsbuildinfo
 
 memo.md
 storybook-static
+test-results/

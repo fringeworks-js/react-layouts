@@ -25,7 +25,6 @@
     "declarationDir": "dist",
     "typeRoots": ["./node_modules/@types"],
     "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
     "allowJs": true,
     "checkJs": true,
     "declaration": true,

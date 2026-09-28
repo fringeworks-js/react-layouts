@@ -16,6 +16,19 @@ const preview: Preview = {
       test: 'todo',
     },
   },
+  decorators: [
+    (story) => {
+      // body と #storybook-root に高さを設定
+      document.body.style.height = '100vh';
+      document.body.style.margin = '0';
+      document.body.style.padding = '0';
+      const root = document.getElementById('storybook-root');
+      if (root) {
+        root.style.height = '100%';
+      }
+      return story();
+    },
+  ],
 };
 
 export default preview;
