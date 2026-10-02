@@ -1,3 +1,4 @@
+import type { StyleProxyOptions } from '@niche-works/react-style-proxy';
 import { styleProxy } from '@niche-works/react-style-proxy';
 import ensureComponent from '@niche-works/react-utils/utils/ensureComponent';
 import type { CreateLayoutStyle } from '@niche-works/style-layouts';
@@ -37,8 +38,12 @@ export default function withLayoutBase<C extends ElementType, O extends object>(
   const {
     displayName = `withLayout(${name})`,
     className: staticClassName,
-    ...styleProxyOptions
+    ...restOptions
   } = options;
+  const styleProxyOptions: StyleProxyOptions = {
+    styleAsDefault: true,
+    ...restOptions,
+  };
 
   const resolveLayout =
     typeof layout === 'function'

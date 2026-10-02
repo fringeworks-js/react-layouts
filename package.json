@@ -1,6 +1,6 @@
 {
   "name": "@niche-works/react-layout",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "private": true,
   "keywords": [
     "react",
@@ -42,8 +42,8 @@
     "tidy": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json}\" --config ./prettier.tidy.config.ts"
   },
   "dependencies": {
-    "@niche-works/react-style-proxy": "^0.2.1",
-    "@niche-works/react-utils": "^0.2.0",
+    "@niche-works/react-style-proxy": "^0.3.0",
+    "@niche-works/react-utils": "^0.2.4",
     "@niche-works/style-layouts": "^0.7.0",
     "@niche-works/types": "^0.3.2",
     "@niche-works/utils": "^0.5.2",

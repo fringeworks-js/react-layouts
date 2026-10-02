@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@niche-works/react-style-proxy':
-        specifier: ^0.2.1
-        version: 0.2.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: ^0.3.0
+        version: 0.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@niche-works/react-utils':
-        specifier: ^0.2.0
-        version: 0.2.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: ^0.2.4
+        version: 0.2.4(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@niche-works/style-layouts':
         specifier: ^0.7.0
         version: 0.7.0
@@ -729,14 +729,14 @@ packages:
   '@niche-works/dev@0.5.5':
     resolution: {integrity: sha512-mZEt7c07NTW/c3sNNKqr43ezIWQRAb9tXZ7eOGpa0ZDGeieg7dDyrVrXUPHHO0CNk5E+N/hyK3mh15+VFW7WHg==}
 
-  '@niche-works/react-style-proxy@0.2.1':
-    resolution: {integrity: sha512-aYmI7s5+6nZEykmQWs/yjYn9iRaPWZfm3qrml0ylBj/8ul34p6GSHFR92PwKpwsYaTA1KqcGbOBZbEVI2Pmoug==}
+  '@niche-works/react-style-proxy@0.3.0':
+    resolution: {integrity: sha512-jTqT/UlCyW69RXrL9+A/59kd0b/EwNAx1CysiMxsb1EXQS/t1Z9pCYbiSqh5fHti47ZWe/He5xUfznwOY+MPpQ==}
     peerDependencies:
-      react: ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
 
-  '@niche-works/react-utils@0.2.1':
-    resolution: {integrity: sha512-BhToipmCwIopr5vdNihJwA7DE8yCmkdr51PlC4947OyPbD+IkF2dCotg0TQ54UV79LJEemYCviQNoCbCjeAEBA==}
+  '@niche-works/react-utils@0.2.4':
+    resolution: {integrity: sha512-4X27cIBBPWE/AsxXL9dyaUnwOiwEgtQGxZJaMH3+eaPwI0XAzBRpzNi3Tp2weIqNJJw9/zlobtPUgh6WPcdTXA==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
@@ -766,6 +766,9 @@ packages:
 
   '@niche-works/utils@0.5.2':
     resolution: {integrity: sha512-dX1gbbysF2PHBTknVaHU2CSf0VsfpazPUJSXmZtf7UALK+flw/XHpndtH/LxLAsKiVskTKNSDwf+AJ59vrkLrQ==}
+
+  '@niche-works/utils@0.5.3':
+    resolution: {integrity: sha512-F69LT7q38Po+qDKV7frFg4kjn5uMQ8AfJw96a/wA7HDD+KuHQ9omiw075dbbv6A939SOyBICMtSpKc5niUK5cQ==}
 
   '@niche-works/web-utils@0.1.1':
     resolution: {integrity: sha512-j1pJ/Ii/1zMyZNHq2mrP20ldg18iA13UEONpRkiQUREcQPHD9m38P2YZe2Y2pXvOksnfVzCksdw45o8R0EhRVw==}
@@ -3829,14 +3832,14 @@ snapshots:
       sass: 1.101.0
       type-fest: 5.7.0
 
-  '@niche-works/react-style-proxy@0.2.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@niche-works/react-style-proxy@0.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
 
-  '@niche-works/react-utils@0.2.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@niche-works/react-utils@0.2.4(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@niche-works/utils': 0.4.2
+      '@niche-works/utils': 0.5.3
       react: 19.2.7
     optionalDependencies:
       react-dom: 19.2.7(react@19.2.7)
@@ -3875,6 +3878,14 @@ snapshots:
       remeda: 2.39.0
 
   '@niche-works/utils@0.5.2':
+    dependencies:
+      '@niche-works/constants': 0.2.0
+      '@niche-works/types': 0.4.0
+      big.js: 6.2.2
+      klona: 2.0.6
+      remeda: 2.39.0
+
+  '@niche-works/utils@0.5.3':
     dependencies:
       '@niche-works/constants': 0.2.0
       '@niche-works/types': 0.4.0

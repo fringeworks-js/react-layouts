@@ -31,10 +31,18 @@ export type LayoutSource<O> =
 /**
  * HOCのオプション
  */
-export type WithLayoutBaseOptions = StyleProxyOptions & {
-  /** コンポーネントに設定するdisplayName */
+export type WithLayoutBaseOptions = Omit<
+  StyleProxyOptions,
+  'styleAsDefault'
+> & {
+  /**
+   * コンポーネントに設定するdisplayName
+   */
   displayName?: string;
-  /** クラス名 */
+
+  /**
+   * クラス名
+   */
   className?: string;
 };
 
