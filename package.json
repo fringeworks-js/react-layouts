@@ -1,6 +1,6 @@
 {
   "name": "@fringeworks/react-layouts",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": true,
   "keywords": [
     "react",
@@ -44,7 +44,7 @@
   "dependencies": {
     "@fringeworks/react-style-proxy": "^0.8.0",
     "@fringeworks/react-utils": "^0.8.0",
-    "@fringeworks/style-layouts": "^0.8.0",
+    "@fringeworks/style-layouts": "^0.8.1",
     "@fringeworks/types": "^0.8.0",
     "@fringeworks/utils": "^0.8.0",
     "clsx": "^2.1.1",
