@@ -1,4 +1,4 @@
-import pin from '@niche-works/style-layouts/pin';
+import pin from '@fringeworks/style-layouts/pin';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
 import type { PinLayoutComponent, WithPinLayoutOptions } from './types';

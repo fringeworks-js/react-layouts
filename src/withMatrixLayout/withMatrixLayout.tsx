@@ -1,4 +1,4 @@
-import matrix from '@niche-works/style-layouts/matrix';
+import matrix from '@fringeworks/style-layouts/matrix';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
 import type { MatrixLayoutComponent, WithMatrixLayoutOptions } from './types';

@@ -1,6 +1,6 @@
-import type { CreateLayoutStyle } from '@niche-works/style-layouts';
-import type { LooseDictionary } from '@niche-works/types';
-import { unsafeCast } from '@niche-works/utils';
+import type { CreateLayoutStyle } from '@fringeworks/style-layouts';
+import type { LooseDictionary } from '@fringeworks/types';
+import { unsafeCast } from '@fringeworks/utils';
 import clsx from 'clsx';
 import type { CSSProperties } from 'react';
 import type { ApplyLayoutOptions, ApplyLayoutResult } from './types';

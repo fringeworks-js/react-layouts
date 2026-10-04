@@ -1,4 +1,4 @@
-import type { FlowLayoutOptions } from '@niche-works/style-layouts/flow';
+import type { FlowLayoutOptions } from '@fringeworks/style-layouts/flow';
 import type { ComponentProps, ComponentRef, ReactNode } from 'react';
 import { describe, expectTypeOf, it } from 'vitest';
 import { LAYOUT_PROPS_KEYS } from '../_internal/_constants';

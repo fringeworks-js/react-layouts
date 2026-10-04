@@ -1,4 +1,4 @@
-import flow from '@niche-works/style-layouts/flow';
+import flow from '@fringeworks/style-layouts/flow';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
 import type { FlowLayoutComponent, WithFlowLayoutOptions } from './types';

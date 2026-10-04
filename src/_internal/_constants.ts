@@ -6,7 +6,7 @@ import type {
   PinLayoutOptions,
   StackLayoutOptions,
   TileLayoutOptions,
-} from '@niche-works/style-layouts';
+} from '@fringeworks/style-layouts';
 import type { ApplyLayoutOptions } from './applyLayout';
 
 export const LAYOUT_PROPS_KEYS: {

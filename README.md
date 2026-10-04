@@ -1,6 +1,6 @@
-# @niche-works/react-layout
+# @fringeworks/react-layouts
 
-`@niche-works/react-layout` is a niche library tailored for controlling child element layouts via CSS.
+`@fringeworks/react-layouts` is a niche library tailored for controlling child element layouts via CSS.
 
 It provides Higher-Order Components (HOCs) that automatically apply class names and CSS variables based on the passed props.
 
@@ -9,9 +9,9 @@ It provides Higher-Order Components (HOCs) that automatically apply class names 
 ## Installation
 
 ```bash
-npm install @niche-works/react-layout
+npm install @fringeworks/react-layouts
 # or
-pnpm add @niche-works/react-layout
+pnpm add @fringeworks/react-layouts
 
 ```
 
@@ -20,7 +20,7 @@ pnpm add @niche-works/react-layout
 You can create a component with layout capabilities by passing any base component to the HOC.
 
 ```tsx
-import { withStackLayout } from '@niche-works/react-layout';
+import { withStackLayout } from '@fringeworks/react-layouts';
 
 // * The wrapped component must pass down `className` and `style` (used for CSS variables) to its underlying element.
 const MyContainer = (props: React.ComponentProps<'div'>) => <div {...props} />;
@@ -40,20 +40,20 @@ const StackContainer = withStackLayout(MyContainer);
 The HOCs do not import any CSS, so they work as-is in SSR and React Server Components. Import the CSS separately.
 
 ```ts
-import { withStackLayout } from '@niche-works/react-layout';
+import { withStackLayout } from '@fringeworks/react-layouts';
 
 // Import all layouts at once
-import '@niche-works/react-layout/styles.css';
+import '@fringeworks/react-layouts/styles.css';
 
 // Or import only what you need
-import '@niche-works/react-layout/stack.css';
-import '@niche-works/react-layout/tile.css';
+import '@fringeworks/react-layouts/stack.css';
+import '@fringeworks/react-layouts/tile.css';
 ```
 
 If you want the CSS to be loaded automatically, use the modules under `with-css`. This requires a bundler that can handle CSS imports.
 
 ```ts
-import { withStackLayout } from '@niche-works/react-layout/with-css';
+import { withStackLayout } from '@fringeworks/react-layouts/with-css';
 ```
 
 ## Layout Types
@@ -63,7 +63,7 @@ import { withStackLayout } from '@niche-works/react-layout/with-css';
 Arranges child elements in a single row or column (linear layout).
 
 ```tsx
-import { withStackLayout } from '@niche-works/react-layout';
+import { withStackLayout } from '@fringeworks/react-layouts';
 
 const StackContainer = withStackLayout(Container);
 
@@ -84,7 +84,7 @@ const StackContainer = withStackLayout(Container);
 Similar to `stack`, but wraps child elements onto multiple lines if they exceed the container size.
 
 ```tsx
-import { withFlowLayout } from '@niche-works/react-layout';
+import { withFlowLayout } from '@fringeworks/react-layouts';
 
 const FlowContainer = withFlowLayout(Container);
 
@@ -107,7 +107,7 @@ const FlowContainer = withFlowLayout(Container);
 Arranges child elements in a grid by specifying the number of columns and rows.
 
 ```tsx
-import { withMatrixLayout } from '@niche-works/react-layout';
+import { withMatrixLayout } from '@fringeworks/react-layouts';
 
 const MatrixContainer = withMatrixLayout(Container);
 
@@ -132,7 +132,7 @@ For each axis, either `itemCount` or `child` is required (specifying both is not
 Arranges child elements in a grid based on the child size. The number of columns is automatically calculated depending on the parent container's size and the child elements' sizes.
 
 ```tsx
-import { withTileLayout } from '@niche-works/react-layout';
+import { withTileLayout } from '@fringeworks/react-layouts';
 
 const TileContainer = withTileLayout(Container);
 
@@ -151,7 +151,7 @@ Distributes child elements evenly in a single row or column.
 - **With `adjust`:** Adjusts the size of child elements to fill the container.
 
 ```tsx
-import { withBalanceLayout } from '@niche-works/react-layout';
+import { withBalanceLayout } from '@fringeworks/react-layouts';
 
 const BalanceContainer = withBalanceLayout(Container);
 
@@ -170,7 +170,7 @@ const BalanceContainer = withBalanceLayout(Container);
 Scales and packs child elements evenly to perfectly fit the size of the parent container.
 
 ```tsx
-import { withPackLayout } from '@niche-works/react-layout';
+import { withPackLayout } from '@fringeworks/react-layouts';
 
 const PackContainer = withPackLayout(Container);
 
@@ -184,7 +184,7 @@ const PackContainer = withPackLayout(Container);
 Positions child elements at specific coordinates. Children should specify their positions using `top` / `left` / `bottom` / `right` styles.
 
 ```tsx
-import { withPinLayout } from '@niche-works/react-layout';
+import { withPinLayout } from '@fringeworks/react-layouts';
 
 const PinContainer = withPinLayout(Container);
 

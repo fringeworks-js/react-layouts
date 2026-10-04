@@ -1,4 +1,4 @@
-import type { MatrixLayoutOptions } from '@niche-works/style-layouts/matrix';
+import type { MatrixLayoutOptions } from '@fringeworks/style-layouts/matrix';
 import type { ElementType } from 'react';
 import type {
   LayoutComponentBase,

@@ -1,4 +1,4 @@
-import tile from '@niche-works/style-layouts/tile';
+import tile from '@fringeworks/style-layouts/tile';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
 import type { TileLayoutComponent, WithTileLayoutOptions } from './types';

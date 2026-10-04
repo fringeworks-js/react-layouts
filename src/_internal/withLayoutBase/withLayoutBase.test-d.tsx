@@ -1,4 +1,4 @@
-import type { CreateLayoutStyle } from '@niche-works/style-layouts';
+import type { CreateLayoutStyle } from '@fringeworks/style-layouts';
 import type { ComponentProps, ComponentRef, ReactNode } from 'react';
 import { forwardRef } from 'react';
 import { describe, expectTypeOf, it } from 'vitest';

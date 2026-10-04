@@ -1,9 +1,9 @@
-import type { StyleProxyOptions } from '@niche-works/react-style-proxy';
-import { styleProxy } from '@niche-works/react-style-proxy';
-import ensureComponent from '@niche-works/react-utils/utils/ensureComponent';
-import type { CreateLayoutStyle } from '@niche-works/style-layouts';
-import type { LooseDictionary } from '@niche-works/types';
-import { unsafeCast } from '@niche-works/utils';
+import type { StyleProxyOptions } from '@fringeworks/react-style-proxy';
+import { styleProxy } from '@fringeworks/react-style-proxy';
+import ensureComponent from '@fringeworks/react-utils/utils/ensureComponent';
+import type { CreateLayoutStyle } from '@fringeworks/style-layouts';
+import type { LooseDictionary } from '@fringeworks/types';
+import { unsafeCast } from '@fringeworks/utils';
 import clsx from 'clsx';
 import type { ComponentRef, ElementType } from 'react';
 import { createElement, forwardRef } from 'react';

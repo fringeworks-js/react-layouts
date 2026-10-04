@@ -1,6 +1,6 @@
-# @niche-works/react-layout
+# @fringeworks/react-layouts
 
-`@niche-works/react-layout` は、CSSによる子要素のレイアウト制御に特化したニッチなライブラリです。\
+`@fringeworks/react-layouts` は、CSSによる子要素のレイアウト制御に特化したニッチなライブラリです。\
 プロパティに応じたクラス名とCSS変数を自動的に設定するHOCを提供します。
 
 **[English README is available here](./README.md)**
@@ -8,9 +8,9 @@
 ## インストール
 
 ```bash
-npm install @niche-works/react-layout
+npm install @fringeworks/react-layouts
 # または
-pnpm add @niche-works/react-layout
+pnpm add @fringeworks/react-layouts
 ```
 
 ## 使い方
@@ -18,7 +18,7 @@ pnpm add @niche-works/react-layout
 任意のコンポーネントをHOCに渡すことで、レイアウト機能の適用されたコンポーネントを作成することができます。
 
 ```ts
-import { withStackLayout } from '@niche-works/react-layout';
+import { withStackLayout } from '@fringeworks/react-layouts';
 
 // ※ classNameやstyle（CSS変数用）を透過するコンポーネントである必要があります
 const MyContainer = (props: React.ComponentProps<'div'>) => <div {...props} />;
@@ -38,20 +38,20 @@ const StackContainer = withStackLayout(MyContainer);
 HOCはCSSをインポートしないため、SSRやReact Server Componentsでもそのまま使用できます。CSSは別途インポートしてください。
 
 ```ts
-import { withStackLayout } from '@niche-works/react-layout';
+import { withStackLayout } from '@fringeworks/react-layouts';
 
 // 全レイアウトをまとめてインポート
-import '@niche-works/react-layout/styles.css';
+import '@fringeworks/react-layouts/styles.css';
 
 // 必要なレイアウトのみインポート
-import '@niche-works/react-layout/stack.css';
-import '@niche-works/react-layout/tile.css';
+import '@fringeworks/react-layouts/stack.css';
+import '@fringeworks/react-layouts/tile.css';
 ```
 
 CSSを自動的に読み込みたい場合は `with-css` 配下のモジュールを使用してください。CSSのインポートを扱えるバンドラーが必要です。
 
 ```ts
-import { withStackLayout } from '@niche-works/react-layout/with-css';
+import { withStackLayout } from '@fringeworks/react-layouts/with-css';
 ```
 
 ## レイアウト種別
@@ -61,7 +61,7 @@ import { withStackLayout } from '@niche-works/react-layout/with-css';
 子要素を縦または横方向に一列に並べます。
 
 ```tsx
-import { withStackLayout } from '@niche-works/react-layout';
+import { withStackLayout } from '@fringeworks/react-layouts';
 
 const StackContainer = withStackLayout(Container);
 
@@ -82,7 +82,7 @@ const StackContainer = withStackLayout(Container);
 `stack`と同様ですが、コンテナサイズを超えた場合に子要素を折り返します。
 
 ```tsx
-import { withFlowLayout } from '@niche-works/react-layout';
+import { withFlowLayout } from '@fringeworks/react-layouts';
 
 const FlowContainer = withFlowLayout(Container);
 
@@ -105,7 +105,7 @@ const FlowContainer = withFlowLayout(Container);
 列数・行数を指定して子要素を格子状に並べます。
 
 ```tsx
-import { withMatrixLayout } from '@niche-works/react-layout';
+import { withMatrixLayout } from '@fringeworks/react-layouts';
 
 const MatrixContainer = withMatrixLayout(Container);
 
@@ -130,7 +130,7 @@ const MatrixContainer = withMatrixLayout(Container);
 子要素のサイズを基準にして格子状に並べます。列数は親要素のサイズと子要素のサイズに応じて自動で決まります。
 
 ```tsx
-import { withTileLayout } from '@niche-works/react-layout';
+import { withTileLayout } from '@fringeworks/react-layouts';
 
 const TileContainer = withTileLayout(Container);
 
@@ -149,7 +149,7 @@ const TileContainer = withTileLayout(Container);
 - `adjust` あり: 子要素のサイズを調整してコンテナを満たします
 
 ```tsx
-import { withBalanceLayout } from '@niche-works/react-layout';
+import { withBalanceLayout } from '@fringeworks/react-layouts';
 
 const BalanceContainer = withBalanceLayout(Container);
 
@@ -168,7 +168,7 @@ const BalanceContainer = withBalanceLayout(Container);
 子要素を親要素のサイズに合わせて均等にサイズ調整し並べます。
 
 ```tsx
-import { withPackLayout } from '@niche-works/react-layout';
+import { withPackLayout } from '@fringeworks/react-layouts';
 
 const PackContainer = withPackLayout(Container);
 
@@ -182,7 +182,7 @@ const PackContainer = withPackLayout(Container);
 子要素を指定の座標に配置します。子要素は `top` / `left` / `bottom` / `right` スタイルで位置を指定してください。
 
 ```tsx
-import { withPinLayout } from '@niche-works/react-layout';
+import { withPinLayout } from '@fringeworks/react-layouts';
 
 const PinContainer = withPinLayout(Container);
 

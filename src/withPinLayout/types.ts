@@ -1,4 +1,4 @@
-import type { PinLayoutOptions } from '@niche-works/style-layouts/pin';
+import type { PinLayoutOptions } from '@fringeworks/style-layouts/pin';
 import type { ElementType } from 'react';
 import type {
   LayoutComponentBase,

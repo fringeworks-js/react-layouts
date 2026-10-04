@@ -1,4 +1,4 @@
-import type { StackLayoutOptions } from '@niche-works/style-layouts/stack';
+import type { StackLayoutOptions } from '@fringeworks/style-layouts/stack';
 import type { ElementType } from 'react';
 import type {
   LayoutComponentBase,

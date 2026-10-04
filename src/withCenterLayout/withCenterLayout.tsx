@@ -1,4 +1,4 @@
-import center from '@niche-works/style-layouts/center';
+import center from '@fringeworks/style-layouts/center';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
 import type { CenterLayoutComponent, WithCenterLayoutOptions } from './types';

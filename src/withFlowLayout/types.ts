@@ -1,4 +1,4 @@
-import type { FlowLayoutOptions } from '@niche-works/style-layouts/flow';
+import type { FlowLayoutOptions } from '@fringeworks/style-layouts/flow';
 import type { ElementType } from 'react';
 import type {
   LayoutComponentBase,

@@ -1,1 +1,1 @@
-import '@niche-works/style-layouts/styles.css';
+import '@fringeworks/style-layouts/styles.css';

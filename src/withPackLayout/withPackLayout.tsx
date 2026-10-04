@@ -1,4 +1,4 @@
-import pack from '@niche-works/style-layouts/pack';
+import pack from '@fringeworks/style-layouts/pack';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
 import type { PackLayoutComponent, WithPackLayoutOptions } from './types';

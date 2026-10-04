@@ -1,4 +1,4 @@
-import type { BalanceLayoutOptions } from '@niche-works/style-layouts/balance';
+import type { BalanceLayoutOptions } from '@fringeworks/style-layouts/balance';
 import type { ElementType } from 'react';
 import type {
   LayoutComponentBase,

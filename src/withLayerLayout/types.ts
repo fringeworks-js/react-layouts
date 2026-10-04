@@ -1,4 +1,4 @@
-import type { LayerLayoutOptions } from '@niche-works/style-layouts/layer';
+import type { LayerLayoutOptions } from '@fringeworks/style-layouts/layer';
 import type { ElementType } from 'react';
 import type {
   LayoutComponentBase,

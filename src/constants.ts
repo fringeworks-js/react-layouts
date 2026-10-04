@@ -5,7 +5,7 @@ export {
   AlignY,
   AlignYBase,
   Direction,
-} from '@niche-works/style-layouts/constants';
+} from '@fringeworks/style-layouts/constants';
 
 /**
  * レイアウト種別

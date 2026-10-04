@@ -1,5 +1,5 @@
-import type { StyleProxyOptions } from '@niche-works/react-style-proxy/styleProxy';
-import type { CreateLayoutStyle } from '@niche-works/style-layouts';
+import type { StyleProxyOptions } from '@fringeworks/react-style-proxy/styleProxy';
+import type { CreateLayoutStyle } from '@fringeworks/style-layouts';
 import type {
   ComponentPropsWithoutRef,
   ComponentRef,
