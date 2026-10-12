@@ -59,7 +59,10 @@ export default function withLayoutBase<C extends ElementType, O extends object>(
         ): [CreateLayoutStyle<O>, LooseDictionary] => {
           const { layout: type, ...rest } = props;
           // マップ内の各レイアウトのオプションの型は、呼び出し側の公開シグネチャで保証する
-          return [unsafeCast<CreateLayoutStyle<O>>(layout[type]), rest];
+          return [
+            unsafeCast<CreateLayoutStyle<O>>((layout as LooseDictionary)[type]),
+            rest,
+          ];
         };
 
   const LayoutComponent = forwardRef<ComponentRef<C>, WithLayoutProps<C, O>>(
