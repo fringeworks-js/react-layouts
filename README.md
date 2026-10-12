@@ -1,6 +1,6 @@
 # @fringeworks/react-layouts
 
-`@fringeworks/react-layouts` is a niche library tailored for controlling child element layouts via CSS.
+`@fringeworks/react-layouts` is a library some will find handy, tailored for controlling child element layouts via CSS.
 
 It provides Higher-Order Components (HOCs) that automatically apply class names and CSS variables based on the passed props.
 

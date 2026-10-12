@@ -1,6 +1,6 @@
 # @fringeworks/react-layouts
 
-`@fringeworks/react-layouts` は、CSSによる子要素のレイアウト制御に特化したニッチなライブラリです。\
+`@fringeworks/react-layouts` は、CSSによる子要素のレイアウト制御に特化した、誰かにとっては便利なライブラリです。\
 プロパティに応じたクラス名とCSS変数を自動的に設定するHOCを提供します。
 
 **[English README is available here](./README.md)**
