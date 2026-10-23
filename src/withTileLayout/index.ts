@@ -1,2 +1,2 @@
 export type * from './types';
-export { default } from './withTileLayout';
+export { default, default as withTileLayout } from './withTileLayout';

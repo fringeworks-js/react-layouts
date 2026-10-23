@@ -1,3 +1,4 @@
 import '../../css/stack.scss';
-export type * from '../../withStackLayout';
+
+export * from '../../withStackLayout';
 export { default } from '../../withStackLayout';

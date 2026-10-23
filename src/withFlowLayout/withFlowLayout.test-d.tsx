@@ -1,8 +1,6 @@
 import type { FlowLayoutOptions } from '@fringeworks/style-layouts/flow';
 import type { ComponentProps, ComponentRef, ReactNode } from 'react';
 import { describe, expectTypeOf, it } from 'vitest';
-import { LAYOUT_PROPS_KEYS } from '../_internal/_constants';
-import type { AllKeys } from '../_internal/withLayoutBase/types';
 import withFlowLayout from './withFlowLayout';
 
 /**
@@ -51,12 +49,5 @@ describe('withFlowLayout', () => {
       direction: 'x';
       adjustX: 'grow';
     }>().toExtend<FlowDivProps>();
-  });
-
-  it('レイアウトのオプションは`LAYOUT_PROPS_KEYS`で網羅されている', () => {
-    // 網羅されていないとコンテナーへそのまま渡ってしまうため
-    expectTypeOf<AllKeys<FlowLayoutOptions>>().toExtend<
-      keyof typeof LAYOUT_PROPS_KEYS
-    >();
   });
 });

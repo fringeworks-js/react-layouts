@@ -1,2 +1,2 @@
 export type * from './types';
-export { default } from './withFlowLayout';
+export { default, default as withFlowLayout } from './withFlowLayout';

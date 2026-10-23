@@ -1,3 +1,4 @@
 import '../../css/matrix.scss';
-export type * from '../../withMatrixLayout';
+
+export * from '../../withMatrixLayout';
 export { default } from '../../withMatrixLayout';

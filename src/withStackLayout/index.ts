@@ -1,2 +1,2 @@
 export type * from './types';
-export { default } from './withStackLayout';
+export { default, default as withStackLayout } from './withStackLayout';

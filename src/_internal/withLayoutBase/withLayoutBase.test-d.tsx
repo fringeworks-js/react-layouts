@@ -2,6 +2,7 @@ import type { CreateLayoutStyle } from '@fringeworks/style-layouts';
 import type { ComponentProps, ComponentRef, ReactNode } from 'react';
 import { forwardRef } from 'react';
 import { describe, expectTypeOf, it } from 'vitest';
+import type { ExtractLayoutOptions } from '../applyLayout';
 import withLayoutBase from './withLayoutBase';
 
 /**
@@ -25,6 +26,14 @@ type TestLayoutOptions = {
 const testLayout: CreateLayoutStyle<TestLayoutOptions> = () => ({});
 
 /**
+ * テスト用のオプションを分ける関数
+ */
+const extractTestOptions: ExtractLayoutOptions<TestLayoutOptions> = (props) => {
+  const { gap, direction, ...rest } = props;
+  return [{ gap, direction }, rest];
+};
+
+/**
  * テスト用のコンポーネント
  *
  * - `title`: 必須のプロパティ
@@ -40,8 +49,14 @@ const Card = forwardRef<HTMLElement, { title: string; gap?: string }>(
 const render = (node: ReactNode): ReactNode => node;
 
 // 型引数を明示せずに生成する
-const LayoutDiv = withLayoutBase('div', testLayout);
-const LayoutCard = withLayoutBase(Card, testLayout);
+const LayoutDiv = withLayoutBase('withTestLayout', 'div', [
+  testLayout,
+  extractTestOptions,
+]);
+const LayoutCard = withLayoutBase('withTestLayout', Card, [
+  testLayout,
+  extractTestOptions,
+]);
 
 type LayoutDivProps = ComponentProps<typeof LayoutDiv>;
 type LayoutCardProps = ComponentProps<typeof LayoutCard>;
@@ -70,6 +85,15 @@ describe('withLayoutBase', () => {
       className: string;
       scroll: boolean;
     }>().toExtend<LayoutDivProps>();
+  });
+
+  it('styleは対象コンポーネントの型をそのまま引き継ぐ', () => {
+    expectTypeOf<{
+      style: { color: string };
+    }>().toExtend<LayoutDivProps>();
+    expectTypeOf<{
+      style: { color: string };
+    }>().not.toExtend<LayoutCardProps>();
   });
 
   it('未知のプロパティは受け付けない', () => {

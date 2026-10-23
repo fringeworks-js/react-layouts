@@ -1,4 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
+import getStoryRects from './_internal/getStoryRects';
 
 const STORY_URL = (storyId: string) =>
   `/iframe.html?id=spec-layer--${storyId}&viewMode=story`;
@@ -257,5 +258,124 @@ test.describe('layer - itemRatio', () => {
     await gotoStory(page, 'child-ratio');
     const child = await getChildRect(page);
     expect(child.height / child.width).toBeCloseTo(1, 1);
+  });
+});
+
+// ===== adjust（itemSizeなし・子要素の中身が親より大きい） =====
+
+const CONTENT_SIZE = 300;
+
+test.describe('layer - adjust（itemSizeなし）', () => {
+  test('adjustX shrink: 親幅 > 中身: 中身の幅のまま', async ({ page }) => {
+    await page.setViewportSize({ width: 800, height: 600 });
+    await gotoStory(page, 'adjust-x-shrink-content');
+    const child = await getChildRect(page);
+    expect(child.width).toBeCloseTo(CONTENT_SIZE, 0);
+  });
+
+  test('adjustX shrink: 親幅 < 中身: 親幅に合わせて縮む', async ({ page }) => {
+    await page.setViewportSize({ width: 200, height: 600 });
+    await gotoStory(page, 'adjust-x-shrink-content');
+    const child = await getChildRect(page);
+    const container = await getContainerRect(page);
+    expect(child.width).toBeCloseTo(container.width, 0);
+  });
+
+  test('adjustX fit: 親幅 < 中身: 親幅に合わせて縮む', async ({ page }) => {
+    await page.setViewportSize({ width: 200, height: 600 });
+    await gotoStory(page, 'adjust-x-fit-content');
+    const child = await getChildRect(page);
+    const container = await getContainerRect(page);
+    expect(child.width).toBeCloseTo(container.width, 0);
+  });
+
+  test('adjustY shrink: 親高さ > 中身: 中身の高さのまま', async ({ page }) => {
+    await page.setViewportSize({ width: 800, height: 800 });
+    await gotoStory(page, 'adjust-y-shrink-content');
+    const child = await getChildRect(page);
+    const container = await getContainerRect(page);
+    expect(child.height).toBeGreaterThanOrEqual(CONTENT_SIZE);
+    expect(child.height).toBeLessThan(container.height);
+  });
+
+  test('adjustY shrink: 親高さ < 中身: 親高さに合わせて縮む', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 800, height: 200 });
+    await gotoStory(page, 'adjust-y-shrink-content');
+    const child = await getChildRect(page);
+    const container = await getContainerRect(page);
+    expect(child.height).toBeCloseTo(container.height, 0);
+  });
+
+  test('adjustY fit: 親高さ < 中身: 親高さに合わせて縮む', async ({ page }) => {
+    await page.setViewportSize({ width: 800, height: 200 });
+    await gotoStory(page, 'adjust-y-fit-content');
+    const child = await getChildRect(page);
+    const container = await getContainerRect(page);
+    expect(child.height).toBeCloseTo(container.height, 0);
+  });
+});
+
+// ===== layerItem =====
+
+test.describe('layer - layerItem', () => {
+  for (const key of ['a', 'b', 'ratio']) {
+    test(`コンテナで指定した場合と同じ結果になる（${key}）`, async ({
+      page,
+    }) => {
+      await page.setViewportSize({ width: 800, height: 600 });
+      await gotoStory(page, `equivalent-${key}-container`);
+      const expected = await getStoryRects(page);
+      await gotoStory(page, `equivalent-${key}-item`);
+      const actual = await getStoryRects(page);
+      expect(actual).toEqual(expected);
+    });
+  }
+
+  test('アイテムの指定でコンテナの指定を上書きする', async ({ page }) => {
+    await page.setViewportSize({ width: 800, height: 600 });
+    await gotoStory(page, 'item-override');
+    const { container, children } = await getStoryRects(page);
+    const [first, second, third] = children;
+    // 指定なし: コンテナの指定（左寄せ・幅100）
+    expect(first!.left).toBeCloseTo(container.left, 0);
+    expect(first!.width).toBeCloseTo(100, 0);
+    // alignX: right で上書き
+    expect(second!.left + second!.width).toBeCloseTo(
+      container.left + container.width,
+      0,
+    );
+    // adjustX: grow で上書き
+    expect(third!.width).toBeCloseTo(container.width, 0);
+  });
+
+  test('limitToItems: layerItemを適用した子要素だけが対象になる', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 800, height: 600 });
+    await gotoStory(page, 'limit-to-items');
+    const { container, children } = await getStoryRects(page);
+    const [first, second] = children;
+    expect(first!.width).toBeCloseTo(100, 0);
+    expect(first!.top).toBeCloseTo(container.top, 0);
+    // 未適用: 重ねる位置（grid-area: 1 / 1）が適用されず、次の行に並ぶ（重ならない）
+    expect(second!.top).toBeGreaterThanOrEqual(first!.top + first!.height);
+  });
+});
+
+// ===== 重なり順 =====
+
+test.describe('layer - 重なり順', () => {
+  test('offsetZで重なり順を変える', async ({ page }) => {
+    await page.setViewportSize({ width: 800, height: 600 });
+    await gotoStory(page, 'offset-z');
+    const { container } = await getStoryRects(page);
+    // DOMの順では2つ目が手前だが、offsetZ: 2 の1つ目が手前になる
+    const label = await page.evaluate(
+      ([x, y]) => document.elementFromPoint(x!, y!)?.textContent ?? null,
+      [container.left + 10, container.top + 10],
+    );
+    expect(label).toBe('1');
   });
 });

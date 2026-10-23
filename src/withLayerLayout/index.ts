@@ -1,2 +1,2 @@
 export type * from './types';
-export { default } from './withLayerLayout';
+export { default, default as withLayerLayout } from './withLayerLayout';

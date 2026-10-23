@@ -1,10 +1,11 @@
+import extractPinOptions from '@fringeworks/style-layouts/helpers/extractPinOptions';
 import pin from '@fringeworks/style-layouts/pin';
 import type { ElementType } from 'react';
 import withLayoutBase from '../_internal/withLayoutBase';
 import type { PinLayoutComponent, WithPinLayoutOptions } from './types';
 
 /**
- * コンテナーのレイアウト機能を追加するHOC
+ * pinレイアウトのコンテナの機能を追加するHOC
  * @param Component コンポーネント
  * @param options オプション
  * @returns
@@ -13,5 +14,10 @@ export default function withPinLayout<C extends ElementType>(
   Component: C,
   options: WithPinLayoutOptions = {},
 ): PinLayoutComponent<C> {
-  return withLayoutBase(Component, pin, options);
+  return withLayoutBase(
+    'withPinLayout',
+    Component,
+    [pin, extractPinOptions],
+    options,
+  );
 }

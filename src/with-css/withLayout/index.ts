@@ -1,3 +1,4 @@
 import '../../css/styles.scss';
-export type * from '../../withLayout';
+
+export * from '../../withLayout';
 export { default } from '../../withLayout';

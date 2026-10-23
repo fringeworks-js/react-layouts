@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { ComponentType, CSSProperties } from 'react';
 import type { ContainerModel } from '../_shared/createContainerModel';
 import ResizableBox from './ResizableBox';

@@ -1,22 +1,5 @@
-export * from '../constants';
-export * as styles from './styles';
-export type * from './withBalanceLayout';
-export { default as withBalanceLayout } from './withBalanceLayout';
-export type * from './withCenterLayout';
-export { default as withCenterLayout } from './withCenterLayout';
-export type * from './withFlowLayout';
-export { default as withFlowLayout } from './withFlowLayout';
-export type * from './withLayerLayout';
-export { default as withLayerLayout } from './withLayerLayout';
-export type * from './withLayout';
-export { default as withLayout } from './withLayout';
-export type * from './withMatrixLayout';
-export { default as withMatrixLayout } from './withMatrixLayout';
-export type * from './withPackLayout';
-export { default as withPackLayout } from './withPackLayout';
-export type * from './withPinLayout';
-export { default as withPinLayout } from './withPinLayout';
-export type * from './withStackLayout';
-export { default as withStackLayout } from './withStackLayout';
-export type * from './withTileLayout';
-export { default as withTileLayout } from './withTileLayout';
+// 全レイアウトのCSSを一度だけ読み込む
+// 個別のモジュール（./withStackLayout など）はそれぞれのCSSを読み込むため、re-exportはCSSを含まない側から行う
+import '../css/styles.scss';
+
+export * from '../index';

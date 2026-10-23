@@ -1,3 +1,4 @@
 import '../../css/tile.scss';
-export type * from '../../withTileLayout';
+
+export * from '../../withTileLayout';
 export { default } from '../../withTileLayout';

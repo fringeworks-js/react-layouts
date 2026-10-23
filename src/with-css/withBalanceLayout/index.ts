@@ -1,3 +1,4 @@
 import '../../css/balance.scss';
-export type * from '../../withBalanceLayout';
+
+export * from '../../withBalanceLayout';
 export { default } from '../../withBalanceLayout';

@@ -1,36 +1,25 @@
-import type { CreateLayoutStyle } from '@fringeworks/style-layouts';
-import type { LooseDictionary } from '@fringeworks/types';
-import { unsafeCast } from '@fringeworks/utils';
 import clsx from 'clsx';
 import type { CSSProperties } from 'react';
-import type { ApplyLayoutOptions, ApplyLayoutResult } from './types';
+import type { ApplyLayoutResult, LayoutFunction } from './types';
 
 /**
- * レイアウト用のスタイルを適用する
+ * レイアウト用のクラスとスタイルを作る
+ *
+ * - ユーザーが指定したクラス・スタイルとのマージは呼び出し側で行う
  * @param layout レイアウトを作る関数
  * @param options レイアウトのオプション
+ * @param scroll スクロールの有無（`true`の場合は`overflow: auto`を加える）
  * @returns
  */
-export default function applyLayout<O extends object = LooseDictionary>(
-  layout: CreateLayoutStyle<O>,
-  options: ApplyLayoutOptions<O> = unsafeCast<ApplyLayoutOptions<O>>({}),
+export default function applyLayout<O>(
+  layout: LayoutFunction<O>,
+  options: O,
+  scroll = false,
 ): ApplyLayoutResult {
-  const { className, scroll, style: optionStyle, ...rest } = options;
-  const style: CSSProperties = { ...optionStyle };
-  // コンテナーのスタイル
-  const { className: layoutedClassName, style: layoutedStyle } = layout(
-    unsafeCast<O>(rest),
-  );
+  const { className, style: layoutStyle } = layout(options);
+  const style: CSSProperties = { ...layoutStyle };
   if (scroll) {
     style.overflow = 'auto';
   }
-  if (layoutedStyle) {
-    // スタイルのマージ
-    Object.assign(style, layoutedStyle);
-  }
-
-  return {
-    className: clsx(className, layoutedClassName),
-    style,
-  };
+  return { className: clsx(className), style };
 }

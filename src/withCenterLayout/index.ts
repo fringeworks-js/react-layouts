@@ -1,2 +1,2 @@
 export type * from './types';
-export { default } from './withCenterLayout';
+export { default, default as withCenterLayout } from './withCenterLayout';

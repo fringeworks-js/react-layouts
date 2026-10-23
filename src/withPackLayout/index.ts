@@ -1,2 +1,2 @@
 export type * from './types';
-export { default } from './withPackLayout';
+export { default, default as withPackLayout } from './withPackLayout';

@@ -1,2 +1,2 @@
 export type * from './types';
-export { default } from './withBalanceLayout';
+export { default, default as withBalanceLayout } from './withBalanceLayout';
