@@ -76,9 +76,9 @@ describe('withLayout', () => {
   test('layoutを切り替えると、適用するレイアウトが変わる', () => {
     const render = (type: LayoutType) =>
       renderToStaticMarkup(createElement(Layout, { layout: type }));
-    expect(render('stack')).toContain('frg-layout-stack');
-    expect(render('tile')).toContain('frg-layout-tile');
-    expect(render('tile')).not.toContain('frg-layout-stack');
+    expect(render('stack')).toContain('frgs-layout-stack');
+    expect(render('tile')).toContain('frgs-layout-tile');
+    expect(render('tile')).not.toContain('frgs-layout-stack');
   });
 
   test.each([['unknown'], ['toString'], [undefined]])(

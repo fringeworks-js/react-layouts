@@ -14,15 +14,15 @@ describe('withStackLayout', () => {
       </LayerDiv>,
     );
     expect(html).toContain(
-      'class="frg-layout-layer-item frg-layout-layer-item-sizeX frg-layout-stack',
+      'class="frgs-layout-layer-item frgs-layout-layer-item-sizeX frgs-layout-stack',
     );
-    expect(html).toContain('--frg-layout-layer-item-sizeX:200px');
-    expect(html).toContain('--frg-layout-itemSizeX:50px');
+    expect(html).toContain('--frgs-layout-layer-item-sizeX:200px');
+    expect(html).toContain('--frgs-layout-itemSizeX:50px');
   });
 
   test('limitToItemsを指定するとコンテナにクラスを追加する', () => {
     expect(renderToStaticMarkup(<StackDiv limitToItems />)).toContain(
-      'frg-layout-limitToItems',
+      'frgs-layout-limitToItems',
     );
   });
 });

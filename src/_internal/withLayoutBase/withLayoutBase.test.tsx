@@ -55,7 +55,7 @@ describe('withLayoutBase', () => {
     test('classNameは、HOCのオプション・プロパティ・レイアウトの順に結合する', () => {
       const Stack = withStackLayout(Probe, { className: 'static' });
       const props = renderProps(<Stack className="custom" />);
-      expect(props['className']).toMatch(/^static custom frg-layout-stack /);
+      expect(props['className']).toMatch(/^static custom frgs-layout-stack /);
       expect(props).not.toHaveProperty('scroll');
     });
   });
@@ -67,7 +67,7 @@ describe('withLayoutBase', () => {
       expect(
         renderToStaticMarkup(<Stack gap={8} style={{ color: 'red' }} />),
       ).toContain(
-        'style="--frg-layout-gapX:8px;--frg-layout-gapY:8px;color:red"',
+        'style="--frgs-layout-gapX:8px;--frgs-layout-gapY:8px;color:red"',
       );
     });
 
@@ -82,12 +82,12 @@ describe('withLayoutBase', () => {
         <Stack
           gap={8}
           scroll
-          style={{ overflow: 'hidden', '--frg-layout-gapX': '20px' } as never}
+          style={{ overflow: 'hidden', '--frgs-layout-gapX': '20px' } as never}
         />,
       );
       expect(html).toContain('overflow:hidden');
-      expect(html).toContain('--frg-layout-gapX:20px');
-      expect(html).toContain('--frg-layout-gapY:8px');
+      expect(html).toContain('--frgs-layout-gapX:20px');
+      expect(html).toContain('--frgs-layout-gapY:8px');
     });
 
     test('scrollを指定するとoverflow: autoを加える', () => {
@@ -102,8 +102,8 @@ describe('withLayoutBase', () => {
       expect(props['style']).toEqual({ margin: 1 });
       expect(props['sx']).toEqual({
         color: 'red',
-        '--frg-layout-gapX': '8px',
-        '--frg-layout-gapY': '8px',
+        '--frgs-layout-gapX': '8px',
+        '--frgs-layout-gapY': '8px',
       });
     });
   });
@@ -132,7 +132,7 @@ describe('withLayoutBase', () => {
       );
       // 後ろの要素が優先される（ユーザーの指定が末尾）
       expect(props['sx']).toEqual([
-        { '--frg-layout-gapX': '8px', '--frg-layout-gapY': '8px' },
+        { '--frgs-layout-gapX': '8px', '--frgs-layout-gapY': '8px' },
         { color: 'red' },
       ]);
     });

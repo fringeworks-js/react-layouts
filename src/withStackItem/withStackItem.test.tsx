@@ -15,13 +15,13 @@ describe('withStackItem', () => {
       />,
     );
     expect(html).toBe(
-      '<span class="custom frg-layout-stack-item frg-layout-stack-item-adjustX frg-layout-stack-item-adjustX-grow frg-layout-stack-item-sizeX frg-layout-stack-item-ratio" id="item" style="--frg-layout-stack-item-sizeX:100px;--frg-layout-stack-item-ratio:2 / 1"></span>',
+      '<span class="custom frgs-layout-stack-item frgs-layout-stack-item-adjustX frgs-layout-stack-item-adjustX-grow frgs-layout-stack-item-sizeX frgs-layout-stack-item-ratio" id="item" style="--frgs-layout-stack-item-sizeX:100px;--frgs-layout-stack-item-ratio:2 / 1"></span>',
     );
   });
 
   test('オプションを省略するとアイテムのクラスだけを適用する', () => {
     expect(renderToStaticMarkup(<StackItemSpan />)).toBe(
-      '<span class="frg-layout-stack-item"></span>',
+      '<span class="frgs-layout-stack-item"></span>',
     );
   });
 });
