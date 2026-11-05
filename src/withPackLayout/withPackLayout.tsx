@@ -1,7 +1,7 @@
 import extractPackOptions from '@fringeworks/style-layouts/helpers/extractPackOptions';
 import pack from '@fringeworks/style-layouts/pack';
 import type { ElementType } from 'react';
-import withLayoutBase from '../_internal/withLayoutBase';
+import withLayoutBase from '../_internal/_withLayoutBase';
 import type { PackLayoutComponent, WithPackLayoutOptions } from './types';
 
 /**

@@ -1,7 +1,7 @@
 import extractLayerItemOptions from '@fringeworks/style-layouts/helpers/extractLayerItemOptions';
 import { layerItem } from '@fringeworks/style-layouts/layer';
 import type { ElementType } from 'react';
-import withLayoutBase from '../_internal/withLayoutBase';
+import withLayoutBase from '../_internal/_withLayoutBase';
 import type { LayerItemComponent, WithLayerItemOptions } from './types';
 
 /**

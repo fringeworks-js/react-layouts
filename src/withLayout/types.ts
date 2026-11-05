@@ -2,7 +2,7 @@ import type { ElementType } from 'react';
 import type {
   LayoutComponentBase,
   WithLayoutBaseOptions,
-} from '../_internal/withLayoutBase';
+} from '../_internal/_withLayoutBase';
 import { LayoutType as LAYOUT_TYPE } from '../constants';
 import type { WithBalanceLayoutProps } from '../withBalanceLayout';
 import type { WithCenterLayoutProps } from '../withCenterLayout';

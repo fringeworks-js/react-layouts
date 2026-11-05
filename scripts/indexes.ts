@@ -26,20 +26,18 @@ generateIndexFiles({
       conditions: /^src\/with-css$/,
     },
   ],
-  // with-css では全体の CSS を読み込み、定数も読み込めるようにする
-  // CSS は sideEffects の対象（CSS のファイル）にするため、JS のモジュールを介さずに直接 import する
+  // with-css の index では、全レイアウトの CSS を一度だけ読み込み、CSS を含まないルートから export する。
+  // 個別のモジュール（./withStackLayout など）はそれぞれの CSS を読み込むので、そこからは export しない
   transform: (exports, { indexPath }) => {
     if (indexPath !== WITH_CSS_INDEX) {
       return exports;
     }
-    // 副作用のための import の後に置く
-    const imports = exports.filter((line) => line.startsWith('import '));
-    const rest = exports.filter((line) => !line.startsWith('import '));
     return [
-      "import '@fringeworks/style-layouts/styles.css';",
-      ...imports,
-      "export * from '../constants';",
-      ...rest,
+      '// 全レイアウトのCSSを一度だけ読み込む',
+      '// 個別のモジュール（./withStackLayout など）はそれぞれのCSSを読み込むため、re-exportはCSSを含まない側から行う',
+      "import '../css/styles.scss';",
+      '',
+      "export * from '../index';",
     ];
   },
 });

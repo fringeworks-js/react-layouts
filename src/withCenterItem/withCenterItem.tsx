@@ -1,7 +1,7 @@
 import { centerItem } from '@fringeworks/style-layouts/center';
 import extractCenterItemOptions from '@fringeworks/style-layouts/helpers/extractCenterItemOptions';
 import type { ElementType } from 'react';
-import withLayoutBase from '../_internal/withLayoutBase';
+import withLayoutBase from '../_internal/_withLayoutBase';
 import type { CenterItemComponent, WithCenterItemOptions } from './types';
 
 /**

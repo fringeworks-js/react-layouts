@@ -1,7 +1,7 @@
 import extractMatrixOptions from '@fringeworks/style-layouts/helpers/extractMatrixOptions';
 import matrix from '@fringeworks/style-layouts/matrix';
 import type { ElementType } from 'react';
-import withLayoutBase from '../_internal/withLayoutBase';
+import withLayoutBase from '../_internal/_withLayoutBase';
 import type { MatrixLayoutComponent, WithMatrixLayoutOptions } from './types';
 
 /**

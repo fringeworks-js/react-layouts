@@ -1,7 +1,7 @@
 import extractStackOptions from '@fringeworks/style-layouts/helpers/extractStackOptions';
 import stack from '@fringeworks/style-layouts/stack';
 import type { ElementType } from 'react';
-import withLayoutBase from '../_internal/withLayoutBase';
+import withLayoutBase from '../_internal/_withLayoutBase';
 import type { StackLayoutComponent, WithStackLayoutOptions } from './types';
 
 /**

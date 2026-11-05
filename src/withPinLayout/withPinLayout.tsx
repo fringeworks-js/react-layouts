@@ -1,7 +1,7 @@
 import extractPinOptions from '@fringeworks/style-layouts/helpers/extractPinOptions';
 import pin from '@fringeworks/style-layouts/pin';
 import type { ElementType } from 'react';
-import withLayoutBase from '../_internal/withLayoutBase';
+import withLayoutBase from '../_internal/_withLayoutBase';
 import type { PinLayoutComponent, WithPinLayoutOptions } from './types';
 
 /**

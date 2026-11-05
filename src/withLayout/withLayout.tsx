@@ -18,8 +18,8 @@ import stack from '@fringeworks/style-layouts/stack';
 import tile from '@fringeworks/style-layouts/tile';
 import { unsafeCast } from '@fringeworks/utils';
 import type { ElementType } from 'react';
-import type { AnyLayoutDefinition } from '../_internal/withLayoutBase';
-import withLayoutBase from '../_internal/withLayoutBase';
+import type { AnyLayoutDefinition } from '../_internal/_withLayoutBase';
+import withLayoutBase from '../_internal/_withLayoutBase';
 import type { LayoutType } from '../constants';
 import type { LayoutComponent, WithLayoutOptions } from './types';
 

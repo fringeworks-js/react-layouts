@@ -1,7 +1,7 @@
 import extractLayerOptions from '@fringeworks/style-layouts/helpers/extractLayerOptions';
 import layer from '@fringeworks/style-layouts/layer';
 import type { ElementType } from 'react';
-import withLayoutBase from '../_internal/withLayoutBase';
+import withLayoutBase from '../_internal/_withLayoutBase';
 import type { LayerLayoutComponent, WithLayerLayoutOptions } from './types';
 
 /**

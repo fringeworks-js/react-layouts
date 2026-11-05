@@ -1,7 +1,7 @@
 import extractTileOptions from '@fringeworks/style-layouts/helpers/extractTileOptions';
 import tile from '@fringeworks/style-layouts/tile';
 import type { ElementType } from 'react';
-import withLayoutBase from '../_internal/withLayoutBase';
+import withLayoutBase from '../_internal/_withLayoutBase';
 import type { TileLayoutComponent, WithTileLayoutOptions } from './types';
 
 /**

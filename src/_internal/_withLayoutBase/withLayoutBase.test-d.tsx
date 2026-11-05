@@ -2,7 +2,7 @@ import type { CreateLayoutStyle } from '@fringeworks/style-layouts';
 import type { ComponentProps, ComponentRef, ReactNode } from 'react';
 import { forwardRef } from 'react';
 import { describe, expectTypeOf, it } from 'vitest';
-import type { ExtractLayoutOptions } from '../applyLayout';
+import type { ExtractLayoutOptions } from '../_applyLayout';
 import withLayoutBase from './withLayoutBase';
 
 /**

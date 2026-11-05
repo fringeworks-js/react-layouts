@@ -1,7 +1,7 @@
 import flow from '@fringeworks/style-layouts/flow';
 import extractFlowOptions from '@fringeworks/style-layouts/helpers/extractFlowOptions';
 import type { ElementType } from 'react';
-import withLayoutBase from '../_internal/withLayoutBase';
+import withLayoutBase from '../_internal/_withLayoutBase';
 import type { FlowLayoutComponent, WithFlowLayoutOptions } from './types';
 
 /**

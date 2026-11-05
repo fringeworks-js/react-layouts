@@ -1,7 +1,7 @@
 import balance from '@fringeworks/style-layouts/balance';
 import extractBalanceOptions from '@fringeworks/style-layouts/helpers/extractBalanceOptions';
 import type { ElementType } from 'react';
-import withLayoutBase from '../_internal/withLayoutBase';
+import withLayoutBase from '../_internal/_withLayoutBase';
 import type { BalanceLayoutComponent, WithBalanceLayoutOptions } from './types';
 
 /**
